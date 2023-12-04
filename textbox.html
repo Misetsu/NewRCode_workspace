@@ -47,11 +47,13 @@ function addText(){
 }
 
 var sel = function(id){return document.getElementById(id)};
+var obj = iText;
 
-bold.onclick = function() {
-    sel.fontWeight = "bold";
-    canvas.requestRenderAll();
-}
+addHandler('bold', function(obj) {
+  var isBold = getStyle(obj, 'fontWeight') === 'bold';
+  setStyle(obj, 'fontWeight', isBold ? '' : 'bold');
+  obj.dirty = true;
+});
 
 </script>
 </body>

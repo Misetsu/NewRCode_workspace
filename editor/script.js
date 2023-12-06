@@ -16,6 +16,11 @@ var nav5 = document.querySelector("#contents5");
 var btn5 = document.querySelector("#btn5");
 var main = document.querySelector(".canvas-container");
 
+const fileInput = document.querySelector("#imageFileInput");
+const canvasCtx = canvas.getContext("2d");
+const settings = {};
+let image = null;
+
 btn1.addEventListener("click", open_close1);
 btn2.addEventListener("click", open_close2);
 btn3.addEventListener("click", open_close3);
@@ -173,3 +178,52 @@ function open_close5() {
     }
     console.log(menuState);
 }
+
+function addText(){
+	var itext = new fabric.IText('テキストボックス', {
+		left: 100,
+		top: 100,
+		fill: '#000000',
+        fontSize: 20,
+        padding: 8
+	});
+    
+    canvas.add(itext);
+    canvas.setActiveObject(iText);
+    canvas.requestRenderAll();
+}
+
+function updateSetting(key, value) {
+  if (!image) return; //画像がない場合リターン
+
+  settings[key] = value;
+  canvasCtx.filter = generateFilter();
+}
+
+function renderImage() {
+  canvas.width = image.width;
+  canvas.height = image.height;
+
+  canvasCtx.filter = generateFilter();
+  canvasCtx.drawImage(image, 0, 0);
+}
+
+document.getElementById("imageFileInput").onchange = function(e) {
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var image = new Image();
+    image.src = e.target.result;
+    image.onload = function() {
+      var img = new fabric.Image(image);
+      img.set({
+        left: 100,
+        top: 60
+      });
+      img.scaleToWidth(200);
+      canvas.add(img).setActiveObject(img).renderAll();
+    }
+  }
+  reader.readAsDataURL(e.target.files[0]);
+}
+
+resetSettings();

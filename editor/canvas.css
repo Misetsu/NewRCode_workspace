@@ -54,7 +54,6 @@ header {
     margin-right: 10px;
 }
 
-
 .icon_Back:hover {
     transform: scale(1.2);
 }
@@ -81,20 +80,17 @@ header {
     height: 100%;
 }
 
-.sidebar ul a {
+.sidebar ul button {
     padding: 15px;
     display: block;
     height: 100%;
     width: 100%;
     line-height: 0;
+    border: none;
     border-bottom: 1px solid #000;
     text-align: center;
     transition: 0.4s;
-}
-
-ul li:hover a {
-    padding-left: 30px;
-    background-color: #d7d7d7;
+    background-color: #B4B4B4;
 }
 
 .sidenav {

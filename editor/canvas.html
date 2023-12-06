@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link rel="stylesheet" href="canvas.css">
+    <script src="https://cdn.jsdelivr.net/npm/fabric"></script>
+</head>
+
+<body>
+    <div class="topnav">
+    <header>
+        <!--戻るボタン-->
+        <a href="#" onclick="history.back()" class="icon_Back"><svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" width="48" height="48">
+                <path
+                    d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z">
+                </path>
+            </svg>
+        </a>
+        <!--ヘッダロゴ-->
+        <a href="#">
+            <h1 class="header-logo">NewRCode</h1>
+        </a>
+        <a href="#" class="icon_L"><!--元に戻す-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path
+                    d="M5.82843 6.99955L8.36396 9.53509L6.94975 10.9493L2 5.99955L6.94975 1.0498L8.36396 2.46402L5.82843 4.99955H13C17.4183 4.99955 21 8.58127 21 12.9996C21 17.4178 17.4183 20.9996 13 20.9996H4V18.9996H13C16.3137 18.9996 19 16.3133 19 12.9996C19 9.68584 16.3137 6.99955 13 6.99955H5.82843Z">
+                </path>
+            </svg>
+        </a>
+
+        <a href="#" class="icon_L"><!--やり直し-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path
+                    d="M18.1716 6.99955H11C7.68629 6.99955 5 9.68584 5 12.9996C5 16.3133 7.68629 18.9996 11 18.9996H20V20.9996H11C6.58172 20.9996 3 17.4178 3 12.9996C3 8.58127 6.58172 4.99955 11 4.99955H18.1716L15.636 2.46402L17.0503 1.0498L22 5.99955L17.0503 10.9493L15.636 9.53509L18.1716 6.99955Z">
+                </path>
+            </svg>
+
+        </a><a href="#" class="icon_L"><!--ユーザーアイコン-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path
+                    d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z">
+                </path>
+            </svg></a>
+        <a href="#" class="icon_R"><!--ユーザーアイコン-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path
+                    d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12.1597 16C10.1243 16 8.29182 16.8687 7.01276 18.2556C8.38039 19.3474 10.114 20 12 20C13.9695 20 15.7727 19.2883 17.1666 18.1081C15.8956 16.8074 14.1219 16 12.1597 16ZM12 4C7.58172 4 4 7.58172 4 12C4 13.8106 4.6015 15.4807 5.61557 16.8214C7.25639 15.0841 9.58144 14 12.1597 14C14.6441 14 16.8933 15.0066 18.5218 16.6342C19.4526 15.3267 20 13.7273 20 12C20 7.58172 16.4183 4 12 4ZM12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5ZM12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7Z">
+                </path>
+            </svg>
+        </a>
+    </header>
+    </div>
+    <div class="sidebar">
+        <ul><!--サイドバー-->
+
+            <li>
+                <button id="btn1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                        <path d="M13 6V21H11V6H5V4H19V6H13Z"></path>
+                    </svg>
+                </button>
+            </li>
+
+
+            <li>
+                <button id="btn2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                        <path
+                            d="M16 17V16H13V13H16V15H18V17H17V19H15V21H13V18H15V17H16ZM21 21H17V19H19V17H21V21ZM3 3H11V11H3V3ZM5 5V9H9V5H5ZM13 3H21V11H13V3ZM15 5V9H19V5H15ZM3 13H11V21H3V13ZM5 15V19H9V15H5ZM18 13H21V15H18V13ZM6 6H8V8H6V6ZM6 16H8V18H6V16ZM16 6H18V8H16V6Z">
+                        </path>
+                    </svg>
+                </button>
+            </li>
+
+            <li>
+                <button id="btn3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                        <path
+                            d="M3 19H21V21H3V19ZM13 5.82843V17H11V5.82843L4.92893 11.8995L3.51472 10.4853L12 2L20.4853 10.4853L19.0711 11.8995L13 5.82843Z">
+                        </path>
+                    </svg>
+                </button>
+            </li>
+
+            <li>
+                <button id="btn4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                        <path
+                            d="M19.2277 18.7321L20.9955 16.9644L22.7632 18.7321C23.7395 19.7084 23.7395 21.2914 22.7632 22.2677C21.7869 23.244 20.204 23.244 19.2277 22.2677C18.2514 21.2914 18.2514 19.7084 19.2277 18.7321ZM8.87861 1.07959L20.1923 12.3933C20.5828 12.7838 20.5828 13.417 20.1923 13.8075L11.707 22.2928C11.3165 22.6833 10.6833 22.6833 10.2928 22.2928L1.80754 13.8075C1.41702 13.417 1.41702 12.7838 1.80754 12.3933L9.58572 4.61512L7.4644 2.4938L8.87861 1.07959ZM10.9999 6.02934L3.92886 13.1004H18.071L10.9999 6.02934Z">
+                        </path>
+                    </svg>
+                </button>
+            </li>
+
+            <li>
+                <button id="btn5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                        <path
+                            d="M15 17V19H6C5.44772 19 5 18.5523 5 18V7H2V5H5V2H7V17H15ZM17 22V7H9V5H18C18.5523 5 19 5.44772 19 6V17H22V19H19V22H17Z">
+                        </path>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidenav" id="contents1">
+        <h2>テキスト</h2>
+    </div>
+
+    <div class="sidenav" id="contents2">
+        <h2>QRコード生成</h2>
+    </div>
+    <div class="sidenav" id="contents3">
+        <h2>画像アップロード</h2>
+    </div>
+    <div class="sidenav" id="contents4">
+        <h2>塗りつぶし</h2>
+    </div>
+    <div class="sidenav" id="contents5">
+        <h2>リサイズ</h2>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="canvas" width="620" height="877" style="border:1px solid #888;"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

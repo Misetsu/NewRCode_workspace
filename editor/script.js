@@ -174,20 +174,6 @@ function open_close5() {
     console.log(menuState);
 }
 
-function addText(){
-	var itext = new fabric.IText('テキストボックス', {
-		left: 100,
-		top: 100,
-		fill: '#000000',
-        fontSize: 20,
-        padding: 8
-	});
-    
-    canvas.add(itext);
-    canvas.setActiveObject(iText);
-    canvas.requestRenderAll();
-}
-
 function updateSetting(key, value) {
     if (!image) return; //画像がない場合リターン
 

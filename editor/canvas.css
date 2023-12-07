@@ -70,6 +70,7 @@ header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    z-index: -1;
 }
 
 .sidebar {
@@ -115,5 +116,16 @@ header {
 }
 
 .canvas-container {
-    margin-left: 80px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shape_btn {
+    background-color: transparent;
+    border: none;
+}
+
+.textDesign {
+    padding: 5px;
 }

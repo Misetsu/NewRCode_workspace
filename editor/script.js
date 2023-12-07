@@ -189,49 +189,50 @@ function renderImage() {
     canvasCtx.drawImage(image, 0, 0);
 }
 
-document.getElementById("imageFileInput").onchange = function(e) {
+document.getElementById("input-files").onchange = function(e) {
     var reader = new FileReader();
     reader.onload = function(e) {
-        var image = new Image();
-        image.src = e.target.result;
-        image.onload = function() {
-            var img = new fabric.Image(image);
-            img.set({
-                left: 100,
-                top: 60
-            });
+      var image = new Image();
+      image.src = e.target.result;
+      image.onload = function() {
+        var img = new fabric.Image(image);
+        img.set({
+          left: 100,
+          top: 60
+        });
         img.scaleToWidth(200);
         canvas.add(img).setActiveObject(img).renderAll();
-        }
+      }
     }
     reader.readAsDataURL(e.target.files[0]);
-}
-
-document.addEventListener('keydown', function (e) {
+  }
+  
+  
+  document.addEventListener('keydown', function (e) {
     //Backspaceキーが押されたときのイベントを処理
     //Backspaceが押されたとき
     if (e.key === 'Backspace') {
         // 選択されているオブジェクトを取得
         var activeObject = canvas.getActiveObject();
         if (activeObject.type === 'i-text') {
-            // テキストボックスの場合、テキストを空にする
-            activeObject.text = '';
-            canvas.renderAll();
-        } else if (activeObject) {}
+          // テキストボックスの場合、テキストを空にする
+          activeObject.text = '';
+          canvas.renderAll();
+      } elseif (activeObject) 
+   }
+  
+  // Delete キーが押されたときのイベントを処理
+  if (e.key === 'Delete') {
+    // 選択されているオブジェクトを取得
+    var activeObjects = canvas.getActiveObjects();
+    // 選択されているオブジェクトが存在する場合
+    if (activeObjects.length > 0) {
+      // オブジェクトを削除
+      canvas.remove(...activeObjects);
+      // 描画を更新
+      canvas.discardActiveObject().renderAll();
     }
-
-    // Delete キーが押されたときのイベントを処理
-    // デリートキーが押されたとき
-    if (e.key === 'Delete') {
-        // 選択されているオブジェクトを取得
-        var activeObject = canvas.getActiveObject();
-        // 選択されているオブジェクトが存在する場合
-        if (activeObject) {
-            // オブジェクトを削除
-            canvas.remove(activeObject);
-            canvas.renderAll();
-        }
-    }
-});
+  }
+  });
 
 resetSettings();

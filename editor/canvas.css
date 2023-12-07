@@ -103,7 +103,6 @@ header {
     width: 250px;
     height: 100%;
     padding-top: 5px;
-    padding-left: 10px;
     text-align: left;
     z-index: 1;
 }
@@ -128,4 +127,39 @@ header {
 
 .textDesign {
     padding: 5px;
+}
+
+form {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 250px;
+    box-shadow: 0 0 2px #3e3e3e;
+    padding: 5px;
+    text-align: center;
+}
+
+.upload-area {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    border: 1px dotted rgba(0, 0, 0, .4);
+    background-color: aqua;
+}
+
+.upload-area p {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    opacity: .8;
+}
+
+#input-files {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }

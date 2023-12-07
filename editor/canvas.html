@@ -121,7 +121,12 @@
     </div>
     <div class="sidenav" id="contents3">
         <h2>画像アップロード</h2>
-        <input type="file" id="imageFileInput">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="upload-area">
+                <p>Drag and drop a file or click</p>
+                <input type="file" name="upload_file" id="input-files">
+            </div>
+        </form>
     </div>
     <div class="sidenav" id="contents4">
         <h2>塗りつぶし</h2>
@@ -160,7 +165,7 @@
     </div>
 
     <div class="canvas-container">
-        <canvas id="canvas" width="620" height="877" style="border:1px solid #888;"></canvas>
+        <canvas id="canvas" width="620" height="877" style="border:1px solid #000;"></canvas>
     </div>
 
     <script src="script.js"></script>

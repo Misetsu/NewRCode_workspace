@@ -35,145 +35,140 @@ var menu4 = 0;
 var menu5 = 0;
 
 function open_close1() {
-  if(menuState === 0){
-    menuState = 1;
-    menu1 = 1;
-    nav1.style.display = "block";
-    main.style.marginLeft = "330px";
-  }
-  else {
-    if(menu1 === 0) {
+    if(menuState === 0){
+        menuState = 1;
         menu1 = 1;
-        menu2 = 0;
-        menu3 = 0;
-        menu4 = 0;
-        menu5 = 0;
         nav1.style.display = "block";
-        nav2.style.display = "none";
-        nav3.style.display = "none";
-        nav4.style.display = "none";
-        nav5.style.display = "none";
+        main.style.marginLeft = "330px";
     } else {
-        menuState = 0;
-        menu1 = 0;
-        nav1.style.display = "none";
-        main.style.marginLeft = "80px";
+        if(menu1 === 0) {
+            menu1 = 1;
+            menu2 = 0;
+            menu3 = 0;
+            menu4 = 0;
+            menu5 = 0;
+            nav1.style.display = "block";
+            nav2.style.display = "none";
+            nav3.style.display = "none";
+            nav4.style.display = "none";
+            nav5.style.display = "none";
+        } else {
+            menuState = 0;
+            menu1 = 0;
+            nav1.style.display = "none";
+            main.style.marginLeft = "80px";
+        }
     }
-  }
-  console.log(menuState);
+    console.log(menuState);
 }
 
 function open_close2() {
     if(menuState === 0){
-      menuState = 1;
-      menu2 = 1;
-      nav2.style.display = "block";
-      main.style.marginLeft = "330px";
-    }
-    else {
-      if(menu2 === 0) {
-          menu1 = 0;
-          menu2 = 1;
-          menu3 = 0;
-          menu4 = 0;
-          menu5 = 0;
-          nav1.style.display = "none";
-          nav2.style.display = "block";
-          nav3.style.display = "none";
-          nav4.style.display = "none";
-          nav5.style.display = "none";
-      } else {
-          menuState = 0;
-          menu2 = 0;
-          nav2.style.display = "none";
-          main.style.marginLeft = "80px";
-      }
+        menuState = 1;
+        menu2 = 1;
+        nav2.style.display = "block";
+        main.style.marginLeft = "330px";
+    } else {
+        if(menu2 === 0) {
+            menu1 = 0;
+            menu2 = 1;
+            menu3 = 0;
+            menu4 = 0;
+            menu5 = 0;
+            nav1.style.display = "none";
+            nav2.style.display = "block";
+            nav3.style.display = "none";
+            nav4.style.display = "none";
+            nav5.style.display = "none";
+        } else {
+            menuState = 0;
+            menu2 = 0;
+            nav2.style.display = "none";
+            main.style.marginLeft = "80px";
+        }
     }
     console.log(menuState);
 }
 
 function open_close3() {
     if(menuState === 0){
-      menuState = 1;
-      menu3 = 1;
-      nav3.style.display = "block";
-      main.style.marginLeft = "330px";
-    }
-    else {
-      if(menu3 === 0) {
-          menu1 = 0;
-          menu2 = 0;
-          menu3 = 1;
-          menu4 = 0;
-          menu5 = 0;
-          nav1.style.display = "none";
-          nav2.style.display = "none";
-          nav3.style.display = "block";
-          nav4.style.display = "none";
-          nav5.style.display = "none";
-      } else {
-          menuState = 0;
-          menu3 = 0;
-          nav3.style.display = "none";
-          main.style.marginLeft = "80px";
-      }
+        menuState = 1;
+        menu3 = 1;
+        nav3.style.display = "block";
+        main.style.marginLeft = "330px";
+    } else {
+        if(menu3 === 0) {
+            menu1 = 0;
+            menu2 = 0;
+            menu3 = 1;
+            menu4 = 0;
+            menu5 = 0;
+            nav1.style.display = "none";
+            nav2.style.display = "none";
+            nav3.style.display = "block";
+            nav4.style.display = "none";
+            nav5.style.display = "none";
+        } else {
+            menuState = 0;
+            menu3 = 0;
+            nav3.style.display = "none";
+            main.style.marginLeft = "80px";
+        }
     }
     console.log(menuState);
 }
 
 function open_close4() {
     if(menuState === 0){
-      menuState = 1;
-      menu4 = 1;
-      nav4.style.display = "block";
-      main.style.marginLeft = "330px";
-    }
-    else {
-      if(menu4 === 0) {
-          menu1 = 0;
-          menu2 = 0;
-          menu3 = 0;
-          menu4 = 1;
-          menu5 = 0;
-          nav1.style.display = "none";
-          nav2.style.display = "none";
-          nav3.style.display = "none";
-          nav4.style.display = "block";
-          nav5.style.display = "none";
-      } else {
-          menuState = 0;
-          menu4 = 0;
-          nav4.style.display = "none";
-          main.style.marginLeft = "80px";
-      }
+        menuState = 1;
+        menu4 = 1;
+        nav4.style.display = "block";
+        main.style.marginLeft = "330px";
+    } else {
+        if(menu4 === 0) {
+            menu1 = 0;
+            menu2 = 0;
+            menu3 = 0;
+            menu4 = 1;
+            menu5 = 0;
+            nav1.style.display = "none";
+            nav2.style.display = "none";
+            nav3.style.display = "none";
+            nav4.style.display = "block";
+            nav5.style.display = "none";
+        } else {
+            menuState = 0;
+            menu4 = 0;
+            nav4.style.display = "none";
+            main.style.marginLeft = "80px";
+        }
     }
     console.log(menuState);
 }
 
 function open_close5() {
     if(menuState === 0){
-      menuState = 1;
-      menu5 = 1;
-      nav5.style.display = "block";
-      main.style.marginLeft = "330px";
-    }
-    else {
-      if(menu5 === 0) {
-          menu1 = 0;
-          menu2 = 0;
-          menu3 = 0;
-          menu4 = 0;
-          menu5 = 1;
-          nav1.style.display = "none";
-          nav2.style.display = "none";
-          nav3.style.display = "none";
-          nav4.style.display = "none";
-          nav5.style.display = "block";
+        menuState = 1;
+        menu5 = 1;
+        nav5.style.display = "block";
+        main.style.marginLeft = "330px";
+    } else {
+        if(menu5 === 0) {
+            menu1 = 0;
+            menu2 = 0;
+            menu3 = 0;
+            menu4 = 0;
+            menu5 = 1;
+            nav1.style.display = "none";
+            nav2.style.display = "none";
+            nav3.style.display = "none";
+            nav4.style.display = "none";
+            nav5.style.display = "block";
       } else {
-          menuState = 0;
-          menu5 = 0;
-          nav5.style.display = "none";
-          main.style.marginLeft = "80px";
+            menuState = 0;
+            menu5 = 0;
+            nav5.style.display = "none";
+            main.style.marginLeft = "80px";
       }
     }
     console.log(menuState);
@@ -194,36 +189,63 @@ function addText(){
 }
 
 function updateSetting(key, value) {
-  if (!image) return; //画像がない場合リターン
+    if (!image) return; //画像がない場合リターン
 
-  settings[key] = value;
-  canvasCtx.filter = generateFilter();
+    settings[key] = value;
+    canvasCtx.filter = generateFilter();
 }
 
 function renderImage() {
-  canvas.width = image.width;
-  canvas.height = image.height;
+    canvas.width = image.width;
+    canvas.height = image.height;
 
-  canvasCtx.filter = generateFilter();
-  canvasCtx.drawImage(image, 0, 0);
+    canvasCtx.filter = generateFilter();
+    canvasCtx.drawImage(image, 0, 0);
 }
 
 document.getElementById("imageFileInput").onchange = function(e) {
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var image = new Image();
-    image.src = e.target.result;
-    image.onload = function() {
-      var img = new fabric.Image(image);
-      img.set({
-        left: 100,
-        top: 60
-      });
-      img.scaleToWidth(200);
-      canvas.add(img).setActiveObject(img).renderAll();
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var image = new Image();
+        image.src = e.target.result;
+        image.onload = function() {
+            var img = new fabric.Image(image);
+            img.set({
+                left: 100,
+                top: 60
+            });
+        img.scaleToWidth(200);
+        canvas.add(img).setActiveObject(img).renderAll();
+        }
     }
-  }
-  reader.readAsDataURL(e.target.files[0]);
+    reader.readAsDataURL(e.target.files[0]);
 }
+
+document.addEventListener('keydown', function (e) {
+    //Backspaceキーが押されたときのイベントを処理
+    //Backspaceが押されたとき
+    if (e.key === 'Backspace') {
+        // 選択されているオブジェクトを取得
+        var activeObject = canvas.getActiveObject();
+        if (activeObject.type === 'i-text') {
+            // テキストボックスの場合、テキストを空にする
+            activeObject.text = '';
+            canvas.renderAll();
+        } else if (activeObject) {}
+    }
+
+    // Delete キーが押されたときのイベントを処理
+    // デリートキーが押されたとき
+    if (e.key === 'Delete') {
+        // 選択されているオブジェクトを取得
+        var activeObject = canvas.getActiveObject();
+        // 選択されているオブジェクトが存在する場合
+        if (activeObject) {
+            // オブジェクトを削除
+            canvas.remove(activeObject);
+            canvas.renderAll();
+        }
+    }
+});
 
 resetSettings();

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Edit</title>
     <link rel="stylesheet" href="canvas.css">
-    <script src="https://cdn.jsdelivr.net/npm/fabric"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
 </head>
 
 <body>
@@ -24,27 +24,27 @@
         <a href="#">
             <h1 class="header-logo">NewRCode</h1>
         </a>
-        <a href="#" class="icon_L"><!--元に戻す-->
+        <button class="icon_L" id="undo"><!--元に戻す-->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                 <path
                     d="M5.82843 6.99955L8.36396 9.53509L6.94975 10.9493L2 5.99955L6.94975 1.0498L8.36396 2.46402L5.82843 4.99955H13C17.4183 4.99955 21 8.58127 21 12.9996C21 17.4178 17.4183 20.9996 13 20.9996H4V18.9996H13C16.3137 18.9996 19 16.3133 19 12.9996C19 9.68584 16.3137 6.99955 13 6.99955H5.82843Z">
                 </path>
             </svg>
-        </a>
-
-        <a href="#" class="icon_L"><!--やり直し-->
+        </button>
+        <button class="icon_L" id="redo"><!--やり直し-->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                 <path
                     d="M18.1716 6.99955H11C7.68629 6.99955 5 9.68584 5 12.9996C5 16.3133 7.68629 18.9996 11 18.9996H20V20.9996H11C6.58172 20.9996 3 17.4178 3 12.9996C3 8.58127 6.58172 4.99955 11 4.99955H18.1716L15.636 2.46402L17.0503 1.0498L22 5.99955L17.0503 10.9493L15.636 9.53509L18.1716 6.99955Z">
                 </path>
             </svg>
-
-        </a><a href="#" class="icon_L"><!--ユーザーアイコン-->
+        </button>
+        <button class="icon_L"><!--ユーザーアイコン-->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                 <path
                     d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z">
                 </path>
-            </svg></a>
+            </svg>
+        </button>
         <a href="#" class="icon_R"><!--ユーザーアイコン-->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                 <path
@@ -114,6 +114,8 @@
         <button class="textDesign" onclick="italicText()"><i>I</i></button>
         <button class="textDesign" onclick="underlineText()"><u>U</u></button>
         <button class="textDesign" onclick="slashText()"><s>S</s></button>
+        <br>
+        <input type="color" value="#000000" id="textColor">
     </div>
 
     <div class="sidenav" id="contents2">
@@ -123,7 +125,7 @@
         <h2>画像アップロード</h2>
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="upload-area">
-                <p>Drag and drop a file or click</p>
+                <p>ドラッグ＆ドロップ<br>またはクリック</p>
                 <input type="file" name="upload_file" id="input-files">
             </div>
         </form>
@@ -159,6 +161,8 @@
             </path>
         </svg>
         </button>
+        <br>
+        <input type="color" value="#000000" id="shapeColor">
     </div>
     <div class="sidenav" id="contents5">
         <h2>リサイズ</h2>
@@ -187,6 +191,7 @@
     <script src="script.js"></script>
     <script src="shape.js"></script>
     <script src="text.js"></script>
+    <script src="resize.js"></script>
 
 </body>
 

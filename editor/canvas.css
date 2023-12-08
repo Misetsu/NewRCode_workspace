@@ -67,18 +67,20 @@ header {
 }
 
 .topnav {
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
-    z-index: -1;
+    z-index: 999;
 }
 
 .sidebar {
     position: fixed;
     left: 0;
+    top: 75px;
     background-color: #B4B4B4;
     width: 80px;
     height: 100%;
+    z-index: 998;
 }
 
 .sidebar ul button {
@@ -104,7 +106,7 @@ header {
     height: 100%;
     padding-top: 5px;
     text-align: left;
-    z-index: 1;
+    z-index: 997;
 }
 
 #canvas {
@@ -115,9 +117,9 @@ header {
 }
 
 .canvas-container {
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    top: 75px;
+    left: 80px;
+    margin: 50px auto;
 }
 
 .shape_btn {
@@ -151,8 +153,7 @@ form {
 .upload-area p {
     width: 100%;
     position: absolute;
-    top: 50%;
-    opacity: .8;
+    top: 40%;
 }
 
 #input-files {

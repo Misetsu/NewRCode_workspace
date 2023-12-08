@@ -1,3 +1,5 @@
+var textRGB = document.getElementById("textColor").value;
+
 function setStyle(object, styleName, value) {
     if (object.setSelectionStyles && object.isEditing) {
         var style = { };
@@ -73,3 +75,11 @@ function slashText() {
         canvas.renderAll();
     }
 }
+
+document.getElementById("textColor").onchange = function() {
+    textRGB = this.value;
+    var activeObject = canvas.getActiveObject();
+    if (activeObject.type === 'i-text') {
+        changeColor(activeObject, textRGB);
+    }
+  }

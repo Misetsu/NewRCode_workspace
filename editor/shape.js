@@ -13,8 +13,9 @@ shape2.addEventListener("click", addShape2);
 shape3.addEventListener("click", addShape3);
 shape4.addEventListener("click", addShape4);
 
-function addShape1(){
-    var svg = circle_fill;
+var shapeRGB = document.getElementById("shapeColor").value;
+
+function addShape(svg) {
     var path = fabric.loadSVGFromString(svg, function(objects, options) {
         var obj = fabric.util.groupSVGElements(objects, options);
         obj.set({
@@ -23,40 +24,40 @@ function addShape1(){
         });
         canvas.add(obj).renderAll();
     });
+}
+
+function changeColor(obj, color) {
+    obj.set({
+        fill: color
+    });
+
+    canvas.renderAll();
+}
+
+function addShape1(){
+    var svg = circle_fill;
+    addShape(svg);
 }
 
 function addShape2(){
     var svg = circle;
-    var path = fabric.loadSVGFromString(svg, function(objects, options) {
-        var obj = fabric.util.groupSVGElements(objects, options);
-        obj.set({
-            left: 100,
-            top: 100
-        });
-        canvas.add(obj).renderAll();
-    });
+    addShape(svg);
 }
 
 function addShape3(){
     var svg = square_fill;
-    var path = fabric.loadSVGFromString(svg, function(objects, options) {
-        var obj = fabric.util.groupSVGElements(objects, options);
-        obj.set({
-            left: 100,
-            top: 100
-        });
-        canvas.add(obj).renderAll();
-    });
+    addShape(svg);
 }
 
 function addShape4(){
     var svg = square;
-    var path = fabric.loadSVGFromString(svg, function(objects, options) {
-        var obj = fabric.util.groupSVGElements(objects, options);
-        obj.set({
-            left: 100,
-            top: 100
-        });
-        canvas.add(obj).renderAll();
-    });
+    addShape(svg);
 }
+
+document.getElementById("shapeColor").onchange = function() {
+    shapeRGB = this.value;
+    var activeObject = canvas.getActiveObject();
+    if (activeObject.type === 'path') {
+        changeColor(activeObject, shapeRGB);
+    }
+  }

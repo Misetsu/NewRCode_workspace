@@ -1,5 +1,9 @@
-var canvas = this.__canvas = new fabric.Canvas('canvas');
+let lockHistory = false;
+const undo_history = [];
+const redo_history = [];
 
+var canvas = this.__canvas = new fabric.Canvas('canvas');
+undo_history.push(JSON.stringify(canvas));
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'blue';
 fabric.Object.prototype.cornerStyle = 'circle';
@@ -56,7 +60,7 @@ function open_close1() {
             menuState = 0;
             menu1 = 0;
             nav1.style.display = "none";
-            main.style.marginLeft = "80px";
+            main.style.marginLeft = "auto";
         }
     }
     console.log(menuState);
@@ -84,7 +88,7 @@ function open_close2() {
             menuState = 0;
             menu2 = 0;
             nav2.style.display = "none";
-            main.style.marginLeft = "80px";
+            main.style.marginLeft = "auto";
         }
     }
     console.log(menuState);
@@ -112,7 +116,7 @@ function open_close3() {
             menuState = 0;
             menu3 = 0;
             nav3.style.display = "none";
-            main.style.marginLeft = "80px";
+            main.style.marginLeft = "auto";
         }
     }
     console.log(menuState);
@@ -140,7 +144,7 @@ function open_close4() {
             menuState = 0;
             menu4 = 0;
             nav4.style.display = "none";
-            main.style.marginLeft = "80px";
+            main.style.marginLeft = "auto";
         }
     }
     console.log(menuState);
@@ -168,7 +172,7 @@ function open_close5() {
             menuState = 0;
             menu5 = 0;
             nav5.style.display = "none";
-            main.style.marginLeft = "80px";
+            main.style.marginLeft = "auto";
       }
     }
     console.log(menuState);
@@ -227,7 +231,7 @@ document.addEventListener('keydown', function (e) {
         var activeObjects = canvas.getActiveObjects();
         // 選択されているオブジェクトが存在する場合
         if (activeObjects.length > 0) {
-                // オブジェクトを削除
+            // オブジェクトを削除
             canvas.remove(...activeObjects);
             // 描画を更新
             canvas.discardActiveObject().renderAll();
@@ -235,78 +239,45 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-function autoA3() {
-    if (document.getElementById("Height").value == "4093") {
-        document.getElementById("Height").value = "5787";
-        document.getElementById("Width").value = "4093";
-    } else {
-        document.getElementById("Height").value = "4093";
-        document.getElementById("Width").value = "5787";
+canvas.on("object:added", function () {
+    if (lockHistory) return;
+    console.log("object:added");
+    undo_history.push(JSON.stringify(canvas));
+    redo_history.length = 0;
+    console.log(undo_history.length);
+  });
+  
+  canvas.on("object:modified", function () {
+    if (lockHistory) return;
+    console.log("object:modified");
+    undo_history.push(JSON.stringify(canvas));
+    redo_history.length = 0;
+    console.log(undo_history.length);
+  });
+  
+  function undo() {
+    if (undo_history.length > 0) {
+      lockHistory = true;
+      if (undo_history.length > 1) redo_history.push(undo_history.pop()); //最初の白紙はredoに入れない
+      const content = undo_history[undo_history.length - 1];
+      canvas.loadFromJSON(content, function () {
+        canvas.renderAll();
+        lockHistory = false;
+      });
     }
-}
-
-function autoA4() {
-    if (document.getElementById("Height").value == "2894") {
-        document.getElementById("Height").value = "4093";
-        document.getElementById("Width").value = "2894";
-    } else {
-        document.getElementById("Height").value = "2894";
-        document.getElementById("Width").value = "4093";
+  }
+  
+  function redo() {
+    if (redo_history.length > 0) {
+      lockHistory = true;
+      const content = redo_history.pop();
+      undo_history.push(content);
+      canvas.loadFromJSON(content, function () {
+        canvas.renderAll();
+        lockHistory = false;
+      });
     }
-}
-
-function autoA5() {
-    if (document.getElementById("Height").value == "2039") {
-        document.getElementById("Height").value = "2894";
-        document.getElementById("Width").value = "2039";
-    } else {
-        document.getElementById("Height").value = "2039";
-        document.getElementById("Width").value = "2894";
-    }
-}
-
-function autoB4() {
-    if (document.getElementById("Height").value == "3541") {
-        document.getElementById("Height").value = "5016";
-        document.getElementById("Width").value = "3541";
-    } else {
-        document.getElementById("Height").value = "3541";
-        document.getElementById("Width").value = "5016";
-    }
-}
-function autoB5() {
-    if (document.getElementById("Height").value == "2508") {
-        document.getElementById("Height").value = "3541";
-        document.getElementById("Width").value = "2508";
-    } else {
-        document.getElementById("Height").value = "2508";
-        document.getElementById("Width").value = "3541";
-    }
-}
-function autoCard() {
-    if (document.getElementById("Height").value == "1378") {
-        document.getElementById("Height").value = "2039";
-        document.getElementById("Width").value = "1378";
-    } else {
-        document.getElementById("Height").value = "1378";
-        document.getElementById("Width").value = "2039";
-    }
-}
-
-function reSize() {
-    document.getElementById("Height").value;
-    document.getElementById("Width").value;
-    let canvas1 = document.querySelector('#canvas');
-    canvas1.height = parseInt(document.getElementById("Height").value);
-    canvas1.width = parseInt(document.getElementById("Width").value);
-    canvas1.style.height = parseInt(document.getElementById("Height").value) + "px";
-    canvas1.style.width = parseInt(document.getElementById("Width").value) + "px";
-
-    let canvas2 = document.querySelector('.upper-canvas');
-    canvas2.height = parseInt(document.getElementById("Height").value);
-    canvas2.width = parseInt(document.getElementById("Width").value);
-    canvas2.style.height = parseInt(document.getElementById("Height").value) + "px";
-    canvas2.style.width = parseInt(document.getElementById("Width").value) + "px";
-}
-
-resetSettings();
+  }
+  
+  document.getElementById("undo").addEventListener("click", undo);
+  document.getElementById("redo").addEventListener("click", redo);

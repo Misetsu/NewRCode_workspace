@@ -31,7 +31,7 @@ function addText(){
     
     canvas.add(itext);
     canvas.setActiveObject(iText);
-    canvas.requestRenderAll();
+    canvas.renderAll();
 }
 
 function changeTextBorderColor(obj, color){

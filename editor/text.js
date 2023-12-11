@@ -1,4 +1,6 @@
-var textRGB = document.getElementById("textColor").value;
+var textRGB;
+var textBorderRGB;
+var textBorderWidth;
 
 function setStyle(object, styleName, value) {
     if (object.setSelectionStyles && object.isEditing) {
@@ -30,6 +32,22 @@ function addText(){
     canvas.add(itext);
     canvas.setActiveObject(iText);
     canvas.requestRenderAll();
+}
+
+function changeTextBorderColor(obj, color){
+    obj.set({
+        stroke: color
+    });
+
+    canvas.renderAll();
+}
+
+function changeTextBorderWidth(obj, width){
+    obj.set({
+        strokeWidth: parseFloat(width)
+    });
+
+    canvas.renderAll();
 }
 
 function boldText() {
@@ -81,5 +99,24 @@ document.getElementById("textColor").onchange = function() {
     var activeObject = canvas.getActiveObject();
     if (activeObject.type === 'i-text') {
         changeColor(activeObject, textRGB);
+        canvas.trigger('object:modified');
     }
-  }
+}
+
+document.getElementById("textBorderColor").onchange = function() {
+    textBorderRGB = this.value;
+    var activeObject = canvas.getActiveObject();
+    if (activeObject.type === 'i-text') {
+        changeTextBorderColor(activeObject, textBorderRGB);
+        canvas.trigger('object:modified');
+    }
+}
+
+document.getElementById("textBorderWidth").onchange = function() {
+    textBorderWidth = this.value;
+    var activeObject = canvas.getActiveObject();
+    if (activeObject.type === 'i-text') {
+        changeTextBorderWidth(activeObject, textBorderWidth);
+        canvas.trigger('object:modified');
+    }
+}

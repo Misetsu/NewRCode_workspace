@@ -39,7 +39,7 @@
                     </path>
                 </svg>
             </button>
-            <button class="icon_L"><!--ダウンロードアイコン-->
+            <button class="icon_L" onclick="selectDownload()"><!--ダウンロードアイコン-->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path
                         d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z">
@@ -155,29 +155,6 @@
         <br>
         色：<input type="color" value="#000000" id="textColor">
         <br>
-        <hr>
-        枠線
-        <br>
-        幅：
-        <select name="textBorderWidth" id="textBorderWidth">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <br>
-        色：<input type="color" value="#000000" id="textBorderColor">
-        <br>
-        塗りつぶし
-        <br>
-        色：<input type="color" value="#000000" id="textColor">
     </div>
 
     <div class="sidenav" id="contents2">
@@ -194,9 +171,7 @@
     </div>
     <div class="sidenav" id="contents4">
         <h2>図形</h2>
-        <h2>図形</h2>
         <br>
-        &emsp;
         &emsp;
         <button class="shape_btn" id="shape1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
@@ -289,10 +264,23 @@
         </button>
         <br>
         <button onclick="reSize()">変更</button>
+        <br>
+        <hr>
+        <br>
+        <div>
+            <h4>背景</h4>
+        </div>
+        <div>
+            <span>
+                色：<input type="color" value="#FFFFFF" id="backColor">
+                &emsp;
+                透明：<input type="checkbox" id="backTransparent">
+            </span>
+        </div>
     </div>
 
     <div class="canvas-container">
-        <canvas id="canvas" width="620" height="877" style="border:1px solid #000;"></canvas>
+        <canvas id="canvas" width="595" height="842" style="border:1px solid #000;"></canvas>
     </div>
 
     <div id="fileName">

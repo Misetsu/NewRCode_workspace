@@ -38,6 +38,8 @@ var menu3 = 0;
 var menu4 = 0;
 var menu5 = 0;
 
+var backRGB = document.getElementById("backColor").value;
+
 function open_close1() {
     if (menuState === 0) {
         menuState = 1;
@@ -281,3 +283,28 @@ function redo() {
 
 document.getElementById("undo").addEventListener("click", undo);
 document.getElementById("redo").addEventListener("click", redo);
+
+function changeBackColor(obj, color) {
+    obj.set({
+        backgroundColor: color
+    });
+
+    canvas.renderAll();
+}
+
+document.getElementById("backColor").onchange = function () {
+    backRGB = this.value;
+    document.getElementById("backTransparent").checked = false;
+    changeBackColor(canvas, backRGB);
+    canvas.trigger('object:modified');
+}
+
+document.getElementById('backTransparent').addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        changeBackColor(canvas, "transparent");
+        canvas.trigger('object:modified');
+    } else {
+        changeBackColor(canvas, backRGB);
+        canvas.trigger('object:modified');
+    }
+})

@@ -47,6 +47,8 @@ header {
     margin-right: 5px;
     background-color: transparent;
     border: none;
+    background-color: transparent;
+    border: none;
 }
 
 .icon_R {
@@ -173,4 +175,18 @@ form {
     text-align: center;
     height: 100%;
     margin-left: 45%;
+}
+
+#fileName {
+    display: none;
+    border: 1px solid #ccc;
+    /* 枠線を追加 */
+    padding: 20px;
+    /* 内側の余白を追加 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 996;
 }

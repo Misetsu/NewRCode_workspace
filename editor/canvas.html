@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -11,48 +10,61 @@
 
 <body>
     <div class="topnav">
-    <header>
-        <!--戻るボタン-->
-        <a href="#" onclick="history.back()" class="icon_Back"><svg xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24" width="48" height="48">
-                <path
-                    d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z">
-                </path>
-            </svg>
-        </a>
-        <!--ヘッダロゴ-->
-        <a href="#">
-            <h1 class="header-logo">NewRCode</h1>
-        </a>
-        <button class="icon_L" id="undo"><!--元に戻す-->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-                <path
-                    d="M5.82843 6.99955L8.36396 9.53509L6.94975 10.9493L2 5.99955L6.94975 1.0498L8.36396 2.46402L5.82843 4.99955H13C17.4183 4.99955 21 8.58127 21 12.9996C21 17.4178 17.4183 20.9996 13 20.9996H4V18.9996H13C16.3137 18.9996 19 16.3133 19 12.9996C19 9.68584 16.3137 6.99955 13 6.99955H5.82843Z">
-                </path>
-            </svg>
-        </button>
-        <button class="icon_L" id="redo"><!--やり直し-->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-                <path
-                    d="M18.1716 6.99955H11C7.68629 6.99955 5 9.68584 5 12.9996C5 16.3133 7.68629 18.9996 11 18.9996H20V20.9996H11C6.58172 20.9996 3 17.4178 3 12.9996C3 8.58127 6.58172 4.99955 11 4.99955H18.1716L15.636 2.46402L17.0503 1.0498L22 5.99955L17.0503 10.9493L15.636 9.53509L18.1716 6.99955Z">
-                </path>
-            </svg>
-        </button>
-        <button class="icon_L"><!--ダウンロードアイコン-->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-                <path
-                    d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z">
-                </path>
-            </svg>
-        </button>
-        <a href="#" class="icon_R"><!--ユーザーアイコン-->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-                <path
-                    d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12.1597 16C10.1243 16 8.29182 16.8687 7.01276 18.2556C8.38039 19.3474 10.114 20 12 20C13.9695 20 15.7727 19.2883 17.1666 18.1081C15.8956 16.8074 14.1219 16 12.1597 16ZM12 4C7.58172 4 4 7.58172 4 12C4 13.8106 4.6015 15.4807 5.61557 16.8214C7.25639 15.0841 9.58144 14 12.1597 14C14.6441 14 16.8933 15.0066 18.5218 16.6342C19.4526 15.3267 20 13.7273 20 12C20 7.58172 16.4183 4 12 4ZM12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5ZM12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7Z">
-                </path>
-            </svg>
-        </a>
-    </header>
+        <header>
+            <!--戻るボタン-->
+            <a href="#" onclick="history.back()" class="icon_Back"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" width="48" height="48">
+                    <path
+                        d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z">
+                    </path>
+                </svg>
+            </a>
+            <!--ヘッダロゴ-->
+            <a href="#">
+                <h1 class="header-logo">NewRCode</h1>
+            </a>
+            <button class="icon_L" id="undo"><!--元に戻す-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                    <path
+                        d="M8 7V11L2 6L8 1V5H13C17.4183 5 21 8.58172 21 13C21 17.4183 17.4183 21 13 21H4V19H13C16.3137 19 19 16.3137 19 13C19 9.68629 16.3137 7 13 7H8Z">
+                    </path>
+                </svg>
+            </button>
+            <button class="icon_L" id="redo"><!--やり直し-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                    <path
+                        d="M16 7H11C7.68629 7 5 9.68629 5 13C5 16.3137 7.68629 19 11 19H20V21H11C6.58172 21 3 17.4183 3 13C3 8.58172 6.58172 5 11 5H16V1L22 6L16 11V7Z">
+                    </path>
+                </svg>
+            </button>
+            <button class="icon_L"><!--ダウンロードアイコン-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                    <path
+                        d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z">
+                    </path>
+                </svg>
+            </button>
+            <span class="slidebar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748ZM7 10H15V12H7V10Z">
+                    </path>
+                </svg>
+                <input name="parsent" id="zoom-slidebar" type="range" min="0.1" max="2" step="0.1" value="1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748ZM10 10V7H12V10H15V12H12V15H10V12H7V10H10Z">
+                    </path>
+                </svg>
+            </span>
+            <button class="icon_R"><!--ユーザーアイコン-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                    <path
+                        d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12.1597 16C10.1243 16 8.29182 16.8687 7.01276 18.2556C8.38039 19.3474 10.114 20 12 20C13.9695 20 15.7727 19.2883 17.1666 18.1081C15.8956 16.8074 14.1219 16 12.1597 16ZM12 4C7.58172 4 4 7.58172 4 12C4 13.8106 4.6015 15.4807 5.61557 16.8214C7.25639 15.0841 9.58144 14 12.1597 14C14.6441 14 16.8933 15.0066 18.5218 16.6342C19.4526 15.3267 20 13.7273 20 12C20 7.58172 16.4183 4 12 4ZM12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5ZM12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7Z">
+                    </path>
+                </svg>
+            </button>
+        </header>
     </div>
     <div class="sidebar">
         <ul><!--サイドバー-->
@@ -78,7 +90,7 @@
                 <button id="btn3">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                         <path
-                            d="M3 19H21V21H3V19ZM13 5.82843V17H11V5.82843L4.92893 11.8995L3.51472 10.4853L12 2L20.4853 10.4853L19.0711 11.8995L13 5.82843Z">
+                            d="M4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19ZM13 9V16H11V9H6L12 3L18 9H13Z">
                         </path>
                     </svg>
                 </button>
@@ -88,7 +100,7 @@
                 <button id="btn4">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                         <path
-                            d="M19.2277 18.7321L20.9955 16.9644L22.7632 18.7321C23.7395 19.7084 23.7395 21.2914 22.7632 22.2677C21.7869 23.244 20.204 23.244 19.2277 22.2677C18.2514 21.2914 18.2514 19.7084 19.2277 18.7321ZM8.87861 1.07959L20.1923 12.3933C20.5828 12.7838 20.5828 13.417 20.1923 13.8075L11.707 22.2928C11.3165 22.6833 10.6833 22.6833 10.2928 22.2928L1.80754 13.8075C1.41702 13.417 1.41702 12.7838 1.80754 12.3933L9.58572 4.61512L7.4644 2.4938L8.87861 1.07959ZM10.9999 6.02934L3.92886 13.1004H18.071L10.9999 6.02934Z">
+                            d="M11.9998 1L6 11H18L11.9998 1ZM11.9998 4.8873L14.4676 9H9.53232L11.9998 4.8873ZM6.75 20C5.23122 20 4 18.7688 4 17.25C4 15.7312 5.23122 14.5 6.75 14.5C8.26878 14.5 9.5 15.7312 9.5 17.25C9.5 18.7688 8.26878 20 6.75 20ZM6.75 22C9.37335 22 11.5 19.8734 11.5 17.25C11.5 14.6266 9.37335 12.5 6.75 12.5C4.12665 12.5 2 14.6266 2 17.25C2 19.8734 4.12665 22 6.75 22ZM15 15.5V19.5H19V15.5H15ZM13 21.5V13.5H21V21.5H13Z">
                         </path>
                     </svg>
                 </button>
@@ -158,69 +170,69 @@
         <br>
         &emsp;
         <button class="shape_btn" id="shape1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-            <path 
-                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z">
-            </path>
-        </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path
+                    d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z">
+                </path>
+            </svg>
         </button>
         <button class="shape_btn" id="shape2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-            <path
-                d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5Z">
-            </path>
-        </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path
+                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5Z">
+                </path>
+            </svg>
         </button>
         <button class="shape_btn" id="shape3">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-            <path 
-                d="M3 4H21C21.5523 4 22 4.44772 22 5V19C22 19.5523 21.5523 20 21 20H3C2.44772 20 2 19.5523 2 19V5C2 4.44772 2.44772 4 3 4ZM4 6V18H20V6H4Z">
-            </path>
-        </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path
+                    d="M3 4H21C21.5523 4 22 4.44772 22 5V19C22 19.5523 21.5523 20 21 20H3C2.44772 20 2 19.5523 2 19V5C2 4.44772 2.44772 4 3 4ZM4 6V18H20V6H4Z">
+                </path>
+            </svg>
         </button>
         <button class="shape_btn" id="shape4">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-            <path 
-                d="M12.8659 3.00017L22.3922 19.5002C22.6684 19.9785 22.5045 20.5901 22.0262 20.8662C21.8742 20.954 21.7017 21.0002 21.5262 21.0002H2.47363C1.92135 21.0002 1.47363 20.5525 1.47363 20.0002C1.47363 19.8246 1.51984 19.6522 1.60761 19.5002L11.1339 3.00017C11.41 2.52187 12.0216 2.358 12.4999 2.63414C12.6519 2.72191 12.7782 2.84815 12.8659 3.00017ZM4.20568 19.0002H19.7941L11.9999 5.50017L4.20568 19.0002Z">
-            </path>
-        </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path
+                    d="M12.8659 3.00017L22.3922 19.5002C22.6684 19.9785 22.5045 20.5901 22.0262 20.8662C21.8742 20.954 21.7017 21.0002 21.5262 21.0002H2.47363C1.92135 21.0002 1.47363 20.5525 1.47363 20.0002C1.47363 19.8246 1.51984 19.6522 1.60761 19.5002L11.1339 3.00017C11.41 2.52187 12.0216 2.358 12.4999 2.63414C12.6519 2.72191 12.7782 2.84815 12.8659 3.00017ZM4.20568 19.0002H19.7941L11.9999 5.50017L4.20568 19.0002Z">
+                </path>
+            </svg>
         </button>
         <br>
         <hr>
         <br>
         <div>
-        <h4>枠線</h4>
+            <h4>枠線</h4>
         </div>
         <div>
-        <span>
-        幅：
-        <select name="shapeBorderWidth" id="shapeBorderWidth">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        </span>
-        <span>
-        色：<input type="color" value="#000000" id="shapeBorderColor">
-        </span>
+            <span>
+                幅：
+                <select name="shapeBorderWidth" id="shapeBorderWidth">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </span>
+            <span>
+                色：<input type="color" value="#000000" id="shapeBorderColor">
+            </span>
         </div>
         <div>
-        <h4>塗りつぶし</h4>
+            <h4>塗りつぶし</h4>
         </div>
         <div>
-        <span>
-        色：<input type="color" value="#000000" id="shapeColor">
-        &emsp;
-        透明：<input type="checkbox" id="shapeTransparent">
-        </span>
+            <span>
+                色：<input type="color" value="#000000" id="shapeColor">
+                &emsp;
+                透明：<input type="checkbox" id="shapeTransparent">
+            </span>
         </div>
     </div>
     <div class="sidenav" id="contents5">
@@ -239,18 +251,26 @@
         <button id="B4" onclick="autoB4()">B4</button>
         <button id="B5" onclick="autoB5()">B5</button>
         <button id="Card" onclick="autoCard()">はがき</button>
+        <button id="swap" onclick="swapWH()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="16">
+                <path
+                    d="M11.9498 7.94975L10.5356 9.36396L8.00079 6.828L8.00004 20H6.00004L6.00079 6.828L3.46451 9.36396L2.05029 7.94975L7.00004 3L11.9498 7.94975ZM21.9498 16.0503L17 21L12.0503 16.0503L13.4645 14.636L16.0008 17.172L16 4H18L18.0008 17.172L20.5356 14.636L21.9498 16.0503Z">
+                </path>
+            </svg>
+        </button>
         <br>
         <button onclick="reSize()">変更</button>
     </div>
 
     <div class="canvas-container">
-        <canvas id="canvas" width="620" height="877" style="border:1px solid #000;"></canvas>
+        <canvas id="canvas" width="595" height="842" style="border:1px solid #000;"></canvas>
     </div>
 
     <script src="script.js"></script>
     <script src="shape.js"></script>
     <script src="text.js"></script>
     <script src="resize.js"></script>
+    <script src="zoom.js"></script>
 
 </body>
 

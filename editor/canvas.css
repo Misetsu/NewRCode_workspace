@@ -45,6 +45,8 @@ header {
     align-items: center;
     margin-left: 5px;
     margin-right: 5px;
+    background-color: transparent;
+    border: none;
 }
 
 .icon_R {

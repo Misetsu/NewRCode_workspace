@@ -281,3 +281,14 @@ function redo() {
 
 document.getElementById("undo").addEventListener("click", undo);
 document.getElementById("redo").addEventListener("click", redo);
+
+
+// キャンバス全体をクリア
+var ctx = canvas.getContext('2d');
+var width = canvas.width;
+var height = canvas.height;
+
+function allClear(){
+    ctx.clearRect(0, 0, width, height);
+  }
+

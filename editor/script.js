@@ -2,7 +2,7 @@ let lockHistory = false;
 const undo_history = [];
 const redo_history = [];
 
-var canvas = this.__canvas = new fabric.Canvas('canvas');
+var canvas = this.__canvas = new fabric.Canvas('canvas',{backgroundColor:"#0ff"});
 undo_history.push(JSON.stringify(canvas));
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'blue';

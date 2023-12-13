@@ -308,3 +308,14 @@ document.getElementById('backTransparent').addEventListener('change', (event) =>
         canvas.trigger('object:modified');
     }
 })
+
+
+// キャンバス全体をクリア
+var ctx = canvas.getContext('2d');
+var width = canvas.width;
+var height = canvas.height;
+
+function allClear() {
+    ctx.clearRect(0, 0, width, height);
+}
+

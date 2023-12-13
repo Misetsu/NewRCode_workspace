@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マウスでDivを移動</title>
+  <style>
+    #movableDiv {
+      width: 595px;
+      height: 842px;
+      background-color: green;
+      position: absolute;
+      cursor: grab;
+    }
+
+    #canvas {
+      width: 100%;
+      height: 100%;
+      background-color: pink;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+
+<div id="allDiv">
+  <div id="movableDiv">
+    <canvas id="canvas"></canvas>
+  </div>
+</div>
+
+<script>
+  // ドラッグ可能なdiv要素を取得
+  var div = document.getElementById('movableDiv');
+  var canvas = document.getElementById('canvas');
+
+  // キャンバスのサイズをdivに合わせる関数
+  function resizeCanvas() {
+    canvas.width = div.offsetWidth;
+    canvas.height = div.offsetHeight;
+  }
+
+  // ウィンドウの中心座標を計算
+  var centerX = window.innerWidth / 2 - div.offsetWidth / 2;
+  var centerY = window.innerHeight / 2 - div.offsetHeight / 2;
+
+  // キャンバスの初期位置を設定
+  div.style.left = centerX + 'px'; // ウィンドウの中心に配置
+  div.style.top = centerY + 'px'; // ウィンドウの中心に配置
+
+  // 最初に1回実行してキャンバスの初期サイズを設定
+  resizeCanvas();
+
+  var offsetX, offsetY, isDragging = false;
+
+  // マウスダウンイベント
+  div.addEventListener('mousedown', function (e) {
+    isDragging = true;
+    offsetX = e.clientX - div.getBoundingClientRect().left;
+    offsetY = e.clientY - div.getBoundingClientRect().top;
+    div.style.cursor = 'grabbing';
+  });
+
+  // マウスアップイベント
+  document.addEventListener('mouseup', function () {
+    isDragging = false;
+    div.style.cursor = 'grab';
+  });
+
+  // マウスムーブイベント
+  document.addEventListener('mousemove', function (e) {
+    if (isDragging) {
+      div.style.left = e.clientX - offsetX + 'px';
+      div.style.top = e.clientY - offsetY + 'px';
+
+      // ドラッグ中にキャンバスのサイズを更新
+      resizeCanvas();
+    }
+  });
+</script>
+
+</body>
+</html>

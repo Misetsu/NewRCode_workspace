@@ -60,6 +60,14 @@ header {
     border: none;
 }
 
+.icon_R2 {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+}
+
 .icon_Back:hover {
     transform: scale(1.2);
 }
@@ -69,6 +77,10 @@ header {
 }
 
 .icon_R:hover {
+    transform: scale(1.2);
+}
+
+.icon_R2:hover {
     transform: scale(1.2);
 }
 

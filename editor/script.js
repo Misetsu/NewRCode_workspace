@@ -18,6 +18,8 @@ var nav4 = document.querySelector("#contents4");
 var btn4 = document.querySelector("#btn4");
 var nav5 = document.querySelector("#contents5");
 var btn5 = document.querySelector("#btn5");
+var nav6 = document.querySelector("#contents6");
+var btn6 = document.querySelector("#btn6");
 var main = document.querySelector(".canvas-container");
 
 const fileInput = document.querySelector("#imageFileInput");
@@ -30,6 +32,7 @@ btn2.addEventListener("click", open_close2);
 btn3.addEventListener("click", open_close3);
 btn4.addEventListener("click", open_close4);
 btn5.addEventListener("click", open_close5);
+btn6.addEventListener("click", open_close6);
 
 var menuState = 0;
 var menu1 = 0;
@@ -37,6 +40,7 @@ var menu2 = 0;
 var menu3 = 0;
 var menu4 = 0;
 var menu5 = 0;
+var menu6 = 0;
 
 var backRGB = document.getElementById("backColor").value;
 
@@ -53,11 +57,13 @@ function open_close1() {
             menu3 = 0;
             menu4 = 0;
             menu5 = 0;
+            menu6 = 0;
             nav1.style.display = "block";
             nav2.style.display = "none";
             nav3.style.display = "none";
             nav4.style.display = "none";
             nav5.style.display = "none";
+            nav6.style.display = "none";
         } else {
             menuState = 0;
             menu1 = 0;
@@ -81,11 +87,13 @@ function open_close2() {
             menu3 = 0;
             menu4 = 0;
             menu5 = 0;
+            menu6 = 0;
             nav1.style.display = "none";
             nav2.style.display = "block";
             nav3.style.display = "none";
             nav4.style.display = "none";
             nav5.style.display = "none";
+            nav6.style.display = "none";
         } else {
             menuState = 0;
             menu2 = 0;
@@ -109,11 +117,13 @@ function open_close3() {
             menu3 = 1;
             menu4 = 0;
             menu5 = 0;
+            menu6 = 0;
             nav1.style.display = "none";
             nav2.style.display = "none";
             nav3.style.display = "block";
             nav4.style.display = "none";
             nav5.style.display = "none";
+            nav6.style.display = "none";
         } else {
             menuState = 0;
             menu3 = 0;
@@ -137,11 +147,13 @@ function open_close4() {
             menu3 = 0;
             menu4 = 1;
             menu5 = 0;
+            menu6 = 0;
             nav1.style.display = "none";
             nav2.style.display = "none";
             nav3.style.display = "none";
             nav4.style.display = "block";
             nav5.style.display = "none";
+            nav6.style.display = "none";
         } else {
             menuState = 0;
             menu4 = 0;
@@ -165,15 +177,47 @@ function open_close5() {
             menu3 = 0;
             menu4 = 0;
             menu5 = 1;
+            menu6 = 0;
             nav1.style.display = "none";
             nav2.style.display = "none";
             nav3.style.display = "none";
             nav4.style.display = "none";
             nav5.style.display = "block";
+            nav6.style.display = "none";
         } else {
             menuState = 0;
             menu5 = 0;
             nav5.style.display = "none";
+            main.style.marginLeft = "auto";
+        }
+    }
+    console.log(menuState);
+}
+
+function open_close6() {
+    if (menuState === 0) {
+        menuState = 1;
+        menu6 = 1;
+        nav6.style.display = "block";
+        main.style.marginLeft = "330px";
+    } else {
+        if (menu6 === 0) {
+            menu1 = 0;
+            menu2 = 0;
+            menu3 = 0;
+            menu4 = 0;
+            menu5 = 0;
+            menu6 = 1;
+            nav1.style.display = "none";
+            nav2.style.display = "none";
+            nav3.style.display = "none";
+            nav4.style.display = "none";
+            nav5.style.display = "none";
+            nav6.style.display = "block";
+        } else {
+            menuState = 0;
+            menu6 = 0;
+            nav6.style.display = "none";
             main.style.marginLeft = "auto";
         }
     }

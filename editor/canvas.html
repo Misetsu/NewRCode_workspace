@@ -298,9 +298,12 @@
 
     <div class="sidenav" id="contents6">
         <h2>レイヤー</h2>
+        <button onclick="addCanvasLayer()">追加</button>
+        <!-- <button onclick="removeLayer()">削除</button>
+        <button onclick="toggleLayer()">表示/非表示</button> -->
     </div>
 
-    <div class="canvas-container">
+    <div id="ccId">
         <canvas id="canvas" width="595" height="842" style="border:1px solid #000;"></canvas>
     </div>
 
@@ -317,6 +320,7 @@
     <script src="resize.js"></script>
     <script src="download.js"></script>
     <script src="zoom.js"></script>
+    <script src="layer.js"></script>
 
 </body>
 

@@ -3,6 +3,9 @@ const undo_history = [];
 const redo_history = [];
 
 var canvas = this.__canvas = new fabric.Canvas('canvas', { backgroundColor: "#fff" });
+canvas.setHeight(document.getElementById("movable").clientHeight);
+canvas.setWidth(document.getElementById("movable").clientWidth);
+
 undo_history.push(JSON.stringify(canvas));
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'blue';
@@ -20,7 +23,7 @@ var nav5 = document.querySelector("#contents5");
 var btn5 = document.querySelector("#btn5");
 var nav6 = document.querySelector("#contents6");
 var btn6 = document.querySelector("#btn6");
-var main = document.querySelector(".canvas-container");
+var main = document.querySelector("#canvas-container");
 
 const fileInput = document.querySelector("#imageFileInput");
 const canvasCtx = canvas.getContext("2d");

@@ -35,15 +35,12 @@ function swapWH() {
 function reSize() {
     document.getElementById("Height").value;
     document.getElementById("Width").value;
-    let canvas1 = document.querySelector('#canvas');
-    canvas1.height = parseInt(document.getElementById("Height").value);
-    canvas1.width = parseInt(document.getElementById("Width").value);
-    canvas1.style.height = parseInt(document.getElementById("Height").value) + "px";
-    canvas1.style.width = parseInt(document.getElementById("Width").value) + "px";
 
-    let canvas2 = document.querySelector('.upper-canvas');
-    canvas2.height = parseInt(document.getElementById("Height").value);
-    canvas2.width = parseInt(document.getElementById("Width").value);
-    canvas2.style.height = parseInt(document.getElementById("Height").value) + "px";
-    canvas2.style.width = parseInt(document.getElementById("Width").value) + "px";
+    let div = document.getElementById("movable");
+    div.style.height = parseInt(document.getElementById("Height").value) + "px";
+    div.style.width = parseInt(document.getElementById("Width").value) + "px";
+
+    canvas.setHeight(document.getElementById("movable").clientHeight);
+    canvas.setWidth(document.getElementById("movable").clientWidth);
+    canvas.renderAll()
 }

@@ -121,14 +121,15 @@ header {
     position: fixed;
     display: none;
     background-color: #d7d7d7;
-    top: 75px;
+    padding: 10px;
+    padding-top: 85px;
     left: 80px;
     width: 250px;
     height: 100%;
-    padding: 10px;
     text-align: left;
     z-index: 997;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #movable {

@@ -8,7 +8,7 @@ var canvasSpace = document.getElementsByTagName('canvas');
 // var canvasContain = document.getElementById("canvas-container");
 
 zoomSlider.addEventListener('input', function () {
-    const sliderScale = zoomSlider.value;
+    var sliderScale = zoomSlider.value;
     movableDiv.style.transform = 'scale(${sliderScale})';
     // canvascontainer2.style.transform = `scale(${sliderScale})`;
     resizeCanvas();

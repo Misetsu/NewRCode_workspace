@@ -176,7 +176,8 @@
 
     <div class="sidenav" id="contents2">
         <h2>QRコード生成</h2>
-        <form class="qrimage" action="" method="POST" enctype="multipart/form-data">
+        <br>
+        <form class="qrimage" action="/qrform" method="POST" enctype="multipart/form-data">
             <label>背景画像:</label>
             <input type="file" name="backImage"
                 onchange="document.getElementById('preview1').src = window.URL.createObjectURL(this.files[0])">
@@ -328,7 +329,13 @@
             <input type="text" name="urlText">
             <br>
             <label>QRコードの色:</label>
-            <input type="color" value="#000000" name="qrColor">
+            <br>
+            <label><input type="radio" name="qrColor" value="wb" checked>白黒</label>
+            <br>
+            <label><input type="radio" name="qrColor" value="auto">自動検出</label>
+            <br>
+            <label><input id="qrColor" type="radio" name="qrColor" value="color">自定義</label>
+            <input id="colorCode" type="color" name="colorCode" value="#000000" style="display: none;">
             <br>
             <label>透明度:</label>
             <input name="qrAlpha" id="alphaSlidebar" type="range" min="150" max="250" step="10" value="250">
@@ -483,6 +490,20 @@
     <script src="resize.js"></script>
     <script src="download.js"></script>
     <script src="zoom.js"></script>
+
+    <script>
+        var selectColor = document.getElementsByName("qrColor");
+
+        selectColor.forEach(function (selectColor) {
+            selectColor.addEventListener("change", function () {
+                if (selectColor.value === 'color') {
+                    document.getElementById("colorCode").style.display = "inline-block";
+                } else {
+                    document.getElementById("colorCode").style.display = "none";
+                }
+            });
+        });
+    </script>
 
 </body>
 

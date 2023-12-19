@@ -203,3 +203,15 @@ form {
     text-align: center;
     z-index: 996;
 }
+
+    /* 列に並べるためのスタイル */
+    #button-container {
+        display: flex;
+        flex-direction: column; /* 列に並べる設定 */
+        align-items: flex-start; /* 左寄せにする設定 */
+      }
+  
+      /* ボタンの余白を設定 */
+      button {
+        margin-bottom: 5px;
+      }

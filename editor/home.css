@@ -6,6 +6,7 @@ body {
     background-color: #878787;
 }
 
+
 .selectbox-detail {
     display: inline-flex;
     align-items: center;
@@ -58,6 +59,7 @@ button {
     align-items: center;
     margin-left: auto;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 #langchange {
@@ -98,6 +100,7 @@ h1:hover {
 
 ul li button {
     position: relative;
+    cursor: pointer;
 }
 
 ul li button:before {
@@ -114,7 +117,6 @@ ul li button:before {
 ul li button:hover:before {
     width: 87%;
 }
-
 
 
 .linenavi {

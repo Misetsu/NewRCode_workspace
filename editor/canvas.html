@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="canvas.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -177,12 +177,13 @@
     <div class="sidenav" id="contents2">
         <h2>QRコード生成</h2>
         <br>
-        <form class="qrimage" action="/qrform" method="POST" enctype="multipart/form-data">
+        <div class="qrimage">
             <label>背景画像:</label>
-            <input type="file" name="backImage"
-                onchange="document.getElementById('preview1').src = window.URL.createObjectURL(this.files[0])">
-            <br>
-            <img id="preview1" width="200px" height="200px">
+            <input type="file" name="backImage" onchange="load_img(window.URL.createObjectURL(this.files[0]))"><br>
+            <input id='scal' type='range' value='' min='10' max='400' oninput="scaling(value)"
+                style='display: none;'><br>
+            <canvas id='cvs' width='200' height='200'></canvas><br>
+            <canvas id='out' width='200' height='200' style="display: none;"></canvas>
             <br>
             <label>アイコン（任意）:</label>
             <br>
@@ -313,7 +314,7 @@
             <img id="preview2" width="50px" height="50px">
             <br>
             <label>URL:</label>
-            <input type="text" name="urlText">
+            <input type="text" name="urlText" id="urlText">
             <br>
             <label>QRコードの色:</label>
             <br>
@@ -327,8 +328,8 @@
             <label>透明度:</label>
             <input name="qrAlpha" id="alphaSlidebar" type="range" min="155" max="255" step="10" value="255">
             <br>
-            <input type="submit" value="生成">
-        </form>
+            <input type="submit" value="生成" onclick="submitQRForm()">
+        </div>
         <br>
         結果:
         <br>
@@ -477,29 +478,7 @@
     <script src="resize.js"></script>
     <script src="download.js"></script>
     <script src="zoom.js"></script>
-
-    <script>
-        const ICON = ['amazon.png', 'chrome.png', 'discord.png', 'facebook.png', 'google.png',
-            'instagram.png', 'line.png', 'snapchat.png', 'tiktok.png', 'twitch.png',
-            'twitter.png', 'wechat.png', 'weibo.png', 'whatsapp.png', 'youtube.png'];
-        var selectColor = document.getElementsByName("qrColor");
-
-        selectColor.forEach(function (selectColor) {
-            selectColor.addEventListener("change", function () {
-                if (selectColor.value === 'color') {
-                    document.getElementById("colorCode").style.display = "inline-block";
-                } else {
-                    document.getElementById("colorCode").style.display = "none";
-                }
-            });
-        });
-
-        function changehidden(num) {
-            var path = "icon/" + ICON[num];
-            document.getElementById('iconImage').value = num;
-            document.getElementById('preview2').src = path;
-        }
-    </script>
+    <script src="qrcode.js"></script>
 
 </body>
 

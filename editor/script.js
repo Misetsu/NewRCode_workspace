@@ -5,6 +5,8 @@ const redo_history = [];
 var canvas = this.__canvas = new fabric.Canvas('canvas', { backgroundColor: "#fff" });
 canvas.setHeight(document.getElementById("movable").clientHeight);
 canvas.setWidth(document.getElementById("movable").clientWidth);
+document.getElementById("Height").value = "842";
+document.getElementById("Width").value = "595";
 
 undo_history.push(JSON.stringify(canvas));
 fabric.Object.prototype.transparentCorners = false;
@@ -52,7 +54,7 @@ function open_close1() {
         menuState = 1;
         menu1 = 1;
         nav1.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu1 === 0) {
             menu1 = 1;
@@ -71,7 +73,7 @@ function open_close1() {
             menuState = 0;
             menu1 = 0;
             nav1.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -82,7 +84,7 @@ function open_close2() {
         menuState = 1;
         menu2 = 1;
         nav2.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu2 === 0) {
             menu1 = 0;
@@ -101,7 +103,7 @@ function open_close2() {
             menuState = 0;
             menu2 = 0;
             nav2.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -112,7 +114,7 @@ function open_close3() {
         menuState = 1;
         menu3 = 1;
         nav3.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu3 === 0) {
             menu1 = 0;
@@ -131,7 +133,7 @@ function open_close3() {
             menuState = 0;
             menu3 = 0;
             nav3.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -142,7 +144,7 @@ function open_close4() {
         menuState = 1;
         menu4 = 1;
         nav4.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu4 === 0) {
             menu1 = 0;
@@ -161,7 +163,7 @@ function open_close4() {
             menuState = 0;
             menu4 = 0;
             nav4.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -172,7 +174,7 @@ function open_close5() {
         menuState = 1;
         menu5 = 1;
         nav5.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu5 === 0) {
             menu1 = 0;
@@ -191,7 +193,7 @@ function open_close5() {
             menuState = 0;
             menu5 = 0;
             nav5.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -202,7 +204,7 @@ function open_close6() {
         menuState = 1;
         menu6 = 1;
         nav6.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu6 === 0) {
             menu1 = 0;
@@ -221,7 +223,7 @@ function open_close6() {
             menuState = 0;
             menu6 = 0;
             nav6.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -357,10 +359,9 @@ document.getElementById('backTransparent').addEventListener('change', (event) =>
 })
 
 // キャンバス全体をクリア
-var ctx = canvas.getContext('2d');
-var width = canvas.width;
-var height = canvas.height;
-
 function allClear() {
+    var ctx = canvas.getContext('2d');
+    var width = canvas.width;
+    var height = canvas.height;
     ctx.clearRect(0, 0, width, height);
 }

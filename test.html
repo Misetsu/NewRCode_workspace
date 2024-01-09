@@ -9,6 +9,15 @@
 	<canvas id='out' width='200' height='200'></canvas><br>
 	<a href="" download onclick="download_img()">Download</a><br>
 
+	<form class="qrimage" action="/giftest" method="POST" enctype="multipart/form-data">
+		<label>背景画像:</label>
+		<input type="file" name="gifImage"
+			onchange="document.getElementById('preview1').src = window.URL.createObjectURL(this.files[0])"
+			accept="image/gif">
+		<br>
+		<img id="preview1" width="200px" height="200px">
+	</form>
+
 
 	<script>
 		const cvs = document.getElementById('cvs')

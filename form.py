@@ -73,3 +73,14 @@ def form():
         image = base64.b64encode(image_binary).decode("utf-8")
         
         return jsonify({'status': True, 'image': image})
+    
+
+@app.route('/giftest', methods=["GET", "POST"])
+def gif():
+    if request.method == 'POST':
+        image1 = request.file["backImage"]
+        if image1 and allwed_file(image1.filename):
+            dt = datetime.utcnow().strftime('%Y%m%d%H%M%S%f')[:-3]
+            filename1 = dt + filename1
+            image1.save(os.path.join(app.config['UPLOAD_FOLDER'], filename1))
+        

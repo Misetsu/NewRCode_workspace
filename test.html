@@ -5,9 +5,9 @@
 	<input type="file" name="backImage" onchange="load_img(window.URL.createObjectURL(this.files[0]))"><br>
 	<input id='scal' type='range' value='' min='10' max='400' oninput="scaling(value)" style='display:none;'><br>
 	<canvas id='cvs' width='200' height='200'></canvas><br>
-	<button onclick='crop_img()'>CROP</button><br>
+	<button onclick='saveImage()'>Save</button><br>
 	<canvas id='out' width='200' height='200'></canvas><br>
-	<a href="" download onclick="download_img()">Download</a><br>
+	<img id="result_qr" width="200px" height="200px">
 
 	<form class="qrimage" action="/giftest" method="POST" enctype="multipart/form-data">
 		<label>背景画像:</label>
@@ -16,6 +16,7 @@
 			accept="image/gif">
 		<br>
 		<img id="preview1" width="200px" height="200px">
+		<input type="submit" value="a">
 	</form>
 
 
@@ -106,6 +107,35 @@
 		function download_img() {
 			crop_img();
 			event.target.href = out.toDataURL("image/JPEG");
+		}
+
+		function saveImage() {
+			crop_img();
+
+			var outcanvas = document.getElementById("out");
+
+			var resultQR = document.getElementById("result_qr");
+
+			backimage = outcanvas.toDataURL("image/JPEG");
+			var now = new Date();
+			var now_str = now.format("yyyymmddHHMMssL");
+			var filename = now_str + ".jpg";
+
+			var server_data = [
+				{ "backimageURL": backimage },
+				{ "filename": filename }
+			];
+
+			$.ajax({
+				type: "POST",
+				url: "/save",
+				data: JSON.stringify(server_data),
+				contentType: "application/json",
+				dataType: 'json',
+				success: function (result) {
+					resultQR.src = "data:image/jpg;base64," + result["image"];
+				}
+			});
 		}
 	</script>
 </body>

@@ -83,4 +83,23 @@ def gif():
             dt = datetime.utcnow().strftime('%Y%m%d%H%M%S%f')[:-3]
             filename1 = dt + filename1
             image1.save(os.path.join(app.config['UPLOAD_FOLDER'], filename1))
+            
+
+@app.route('/save', methods=["GET", "POST"])
+def saveImage():
+    if request.method == 'POST':
+        data = request.get_json()
         
+        filename1 = data[1]["filename"]
+        base64Img = data[0]["backimageURL"]
+        code = base64.b64decode(base64Img.split(',')[1])
+        image_decoded = Image.open(BytesIO(code))
+        image_decoded.save(os.path.join(app.config['UPLOAD_FOLDER'], filename1))
+
+        qrpath = os.path.join(app.config['UPLOAD_FOLDER'], filename1)
+        
+        with open(qrpath, "rb") as f:
+            image_binary = f.read()    
+        image = base64.b64encode(image_binary).decode("utf-8")
+        
+        return jsonify({'status': True, 'image': image})

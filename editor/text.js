@@ -1,6 +1,7 @@
 var textRGB;
 var textBorderRGB;
 var textBorderWidth;
+let textBoxCounter = 1; // テキストボックスのカウンターを初期化
 
 function setStyle(object, styleName, value) {
     if (object.setSelectionStyles && object.isEditing) {
@@ -11,27 +12,22 @@ function setStyle(object, styleName, value) {
     else {
         object[styleName] = value;
     }
-  }
+}
 
 function getStyle(object, styleName) {
     return (object.getSelectionStyles && object.isEditing)
         ? object.getSelectionStyles()[styleName]
         : object[styleName];
-  }
+}
 
-  
 function addText(){
-	var itext = new fabric.IText('テキストボックス', {
-		left: 100,
-		top: 100,
-		fill: '#000000',
+    var itext = new fabric.IText('テキストボックス', {
+        left: 100,
+        top: 100,
+        fill: '#000000',
         fontSize: 20,
         padding: 8
-	});
-    
-    canvas.add(itext);
-    canvas.setActiveObject(iText);
-    canvas.renderAll();
+    });
 }
 
 function changeTextBorderColor(obj, color){

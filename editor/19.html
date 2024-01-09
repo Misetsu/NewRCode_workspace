@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>要素の位置入れ替え</title>
+</head>
+<body>
+
+<button onclick="swapElements()">位置を入れ替える</button>
+<div id="element1">要素1</div>
+<div id="element2">要素2</div>
+
+<script>
+function swapElements() {
+    // 要素を取得
+    let element1 = document.getElementById('element1');
+    let element2 = document.getElementById('element2');
+
+    // 要素の親ノードを取得
+    let parent = element1.parentNode;
+
+    // 要素の位置を入れ替える
+    parent.insertBefore(element2, element1);
+}
+</script>
+
+</body>
+</html>
+

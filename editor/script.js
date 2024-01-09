@@ -3,6 +3,8 @@ const undo_history = [];
 const redo_history = [];
 
 var canvas = this.__canvas = new fabric.Canvas('canvas', { backgroundColor: "#fff" });
+
+
 undo_history.push(JSON.stringify(canvas));
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'blue';

@@ -83,15 +83,15 @@ def gif():
             dt = datetime.utcnow().strftime('%Y%m%d%H%M%S%f')[:-3]
             if image1.filename[-3:] == "gif":
                 filename1 = dt + ".gif"
+                filepath2 = ""
             else:
                 filename1 = dt + ".jpg"
+                image2 = request.form["iconImage2"]
+                if image2 == "":
+                    filepath2 = ""
+                else:
+                    filepath2 = os.path.join(app.config['ICON_FOLDER'], ICON[int(image2)])
             image1.save(os.path.join(app.config['UPLOAD_FOLDER'], filename1))
-            
-        image2 = request.form["iconImage2"]
-        if image2 == "":
-            filepath2 = ""
-        else:
-            filepath2 = os.path.join(app.config['ICON_FOLDER'], ICON[int(image2)])
         
         filepath1 = os.path.join(app.config['UPLOAD_FOLDER'], filename1)
         url = request.form["urlText2"]

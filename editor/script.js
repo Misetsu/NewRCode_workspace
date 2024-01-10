@@ -252,8 +252,8 @@ document.getElementById("input-files").onchange = function (e) {
         image.onload = function () {
             var img = new fabric.Image(image);
             img.set({
-                left: 100,
-                top: 60
+                left: 50,
+                top: 50
             });
             img.scaleToWidth(200);
             canvas.add(img).setActiveObject(img).renderAll();

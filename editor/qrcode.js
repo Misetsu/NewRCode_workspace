@@ -141,3 +141,13 @@ function submitQRForm() {
         }
     });
 }
+
+function addQRCode() {
+    var qrresult = document.getElementById("result_qr");
+    var imgInstance = new fabric.Image(qrresult, {
+        left: 50,
+        top: 50,
+    });
+    imgInstance.scaleToWidth(200);
+    canvas.add(imgInstance).renderAll();
+}

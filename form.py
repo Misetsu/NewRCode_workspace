@@ -103,7 +103,7 @@ def gif():
         
         qrpath = "./image/" + filename1
         
-        return send_file(qrpath)
+        return render_template("result.html", image_path=qrpath)
             
 
 @app.route('/save', methods=["GET", "POST"])

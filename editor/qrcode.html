@@ -190,15 +190,6 @@
         </form>
     </div>
 
-    <div class="bodydiv">
-        <input type="file" name="backImage" onchange="load_img(window.URL.createObjectURL(this.files[0]))"><br>
-        <input id='scal' type='range' value='' min='10' max='400' oninput="scaling(value)" style='display:none;'><br>
-        <canvas id='cvs' width='200' height='200'></canvas><br>
-        <button onclick='saveImage()'>Save</button><br>
-        <canvas id='out' width='200' height='200'></canvas><br>
-        <button onclick='downloadImage()'>Save</button><br>
-    </div>
-
     <script>
         const ICON = ['amazon.png', 'chrome.png', 'discord.png', 'facebook.png', 'google.png',
             'instagram.png', 'line.png', 'snapchat.png', 'tiktok.png', 'twitch.png',

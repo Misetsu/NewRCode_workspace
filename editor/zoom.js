@@ -39,12 +39,12 @@ document.getElementById("Width").value;
 canvascontainer.addEventListener('mousedown', function (e) {
     if (e.button == 2) {
         isDragging = true;
-        // boxX = movableDiv.getBoundingClientRect().left + (document.getElementById("Width").value / 2) - ((document.getElementById("Width").value * sliderScale) / 2);
-        // boxY = movableDiv.getBoundingClientRect().top + (document.getElementById("Height").value / 2) - ((document.getElementById("Height").value * sliderScale) / 2);
-        // offsetX = e.clientX - boxX + canvascontainer.getBoundingClientRect().left;
-        // offsetY = e.clientY - boxY + canvascontainer.getBoundingClientRect().top;
-        offsetX = e.clientX - movableDiv.getBoundingClientRect().left + canvascontainer.getBoundingClientRect().left;
-        offsetY = e.clientY - movableDiv.getBoundingClientRect().top + canvascontainer.getBoundingClientRect().top;
+        boxX = movableDiv.getBoundingClientRect().left + (document.getElementById("Width").value / 2) - ((document.getElementById("Width").value * sliderScale) / 2);
+        boxY = movableDiv.getBoundingClientRect().top + (document.getElementById("Height").value / 2) - ((document.getElementById("Height").value * sliderScale) / 2);
+        offsetX = e.clientX - boxX + canvascontainer.getBoundingClientRect().left;
+        offsetY = e.clientY - boxY + canvascontainer.getBoundingClientRect().top;
+        // offsetX = e.clientX - movableDiv.getBoundingClientRect().left + canvascontainer.getBoundingClientRect().left;
+        // offsetY = e.clientY - movableDiv.getBoundingClientRect().top + canvascontainer.getBoundingClientRect().top;
         // boxX = movableDiv.getBoundingClientRect().left;
         // boxY = movableDiv.getBoundingClientRect().top;
         div.style.cursor = 'grabbing';
@@ -60,10 +60,10 @@ document.addEventListener('mouseup', function () {
 // マウスムーブイベント
 canvascontainer.addEventListener('mousemove', function (e) {
     if (isDragging) {
-        var X = boxX + (e.clientX - offsetX) - - canvascontainer.getBoundingClientRect().left;
-        var Y = boxY + (e.clientY - offsetY) - canvascontainer.getBoundingClientRect().top;
-        X = e.clientX - offsetX;
-        Y = e.clientY - offsetY;
+        // var X = boxX + (e.clientX - offsetX) - - canvascontainer.getBoundingClientRect().left;
+        // var Y = boxY + (e.clientY - offsetY) - canvascontainer.getBoundingClientRect().top;
+        var X = e.clientX - offsetX;
+        var Y = e.clientY - offsetY;
         movableDiv.style.left = X + 'px';
         movableDiv.style.top = Y + 'px';
 

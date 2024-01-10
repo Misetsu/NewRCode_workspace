@@ -9,6 +9,7 @@ selectColor.forEach(function (selectColor) {
             document.getElementById("colorCode").style.display = "inline-block";
         } else {
             document.getElementById("colorCode").style.display = "none";
+            document.getElementById("colorCode").value = "#000000";
         }
     });
 });

@@ -54,7 +54,7 @@
                     <span class="slider round"></span>
                 </label>
                 <br>
-                <div id="iconSelect" style="display: none;">
+                <div id="iconSelect2" style="display: none;">
                     <button class="shape_btn" onclick="changehidden(0);" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                             <path
@@ -333,9 +333,11 @@
 
         function handleSwitch(check) {
             if (check.checked) {
-                document.getElementById("iconSelect").style.display = "block";
+                document.getElementById("iconSelect2").style.display = "block";
             } else {
-                document.getElementById("iconSelect").style.display = "none";
+                document.getElementById("iconSelect2").style.display = "none";
+                document.getElementById("icon_preview").setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg");
+                document.getElementById("iconImage2").value = "";
             }
         }
     </script>

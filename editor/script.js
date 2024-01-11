@@ -365,3 +365,13 @@ function allClear() {
     var height = canvas.height;
     ctx.clearRect(0, 0, width, height);
 }
+
+function handleSwitch(check) {
+    if (check.checked) {
+        document.getElementById("iconSelect").style.display = "block";
+    } else {
+        document.getElementById("iconSelect").style.display = "none";
+        document.getElementById("preview2").setAttribute("src", "https://www.colorhexa.com/d7d7d7.png");
+        document.getElementById("iconImage").value = "";
+    }
+}

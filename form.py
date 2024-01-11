@@ -78,26 +78,48 @@ def form():
 @app.route('/giftest', methods=["GET", "POST"])
 def gif():
     if request.method == 'POST':
-        image1 = request.files["backImage2"]
+        image1 = request.files["gifImage"]
         if image1 and allwed_file(image1.filename):
             dt = datetime.utcnow().strftime('%Y%m%d%H%M%S%f')[:-3]
             if image1.filename[-3:] == "gif":
                 filename1 = dt + ".gif"
                 filepath2 = ""
-            else:
-                filename1 = dt + ".jpg"
-                image2 = request.form["iconImage2"]
-                if image2 == "":
-                    filepath2 = ""
-                else:
-                    filepath2 = os.path.join(app.config['ICON_FOLDER'], ICON[int(image2)])
             image1.save(os.path.join(app.config['UPLOAD_FOLDER'], filename1))
         
         filepath1 = os.path.join(app.config['UPLOAD_FOLDER'], filename1)
-        url = request.form["urlText2"]
-        color = request.form["qrColor2"]
-        colorCode = request.form["colorCode2"]
-        alpha = request.form["qrAlpha2"]
+        url = request.form["gifURL"]
+        color = request.form["gifQRColor"]
+        colorCode = request.form["gifColorCode"]
+        alpha = request.form["gifQRAlpha"]
+        
+        pre2(filepath1, url, filename1, color, colorCode, alpha)
+        
+        qrpath = "./image/" + filename1
+        
+        return render_template("result.html", image_path=qrpath)
+    
+@app.route('/jpgtest', methods=["GET", "POST"])
+def jpg():
+    if request.method == "POST":
+        data = request.get_json()
+        
+        base64Img = data[0]["backimageURL"]
+        code = base64.b64decode(base64Img.split(',')[1])
+        image_decoded = Image.open(BytesIO(code))
+        dt = datetime.utcnow().strftime('%Y%m%d%H%M%S%f')[:-3]
+        filename1 = dt + ".jpg"
+        image_decoded.save(os.path.join(app.config['UPLOAD_FOLDER'], filename1))
+        
+        if data[2]["iconCode"] == "":
+            filepath2 = ""
+        else:
+            filepath2 = os.path.join(app.config['ICON_FOLDER'], ICON[int(data[2]["iconCode"])])
+            
+        filepath1 = os.path.join(app.config['UPLOAD_FOLDER'], filename1)
+        url = data[3]["url"]
+        color = data[4]["color"]
+        colorCode = data[5]["colorCode"]
+        alpha = data[6]["alpha"]
         
         pre(filepath1, filepath2, url, filename1, color, colorCode, alpha)
         

@@ -35,22 +35,46 @@
     </div>
 
     <div class="bodydiv">
-        <form class="qrimage" action="/giftest" method="POST" enctype="multipart/form-data">
+        <label>画像形式：</label>
+        <label><input type="radio" name="filetype" value="jpg" checked>JPG/PNG</label>
+        <label><input type="radio" name="filetype" value="gif">GIF</label>
+        <br>
+        <div id="gifFile">
+            <form class="qrimage" action="/giftest" method="POST" enctype="multipart/form-data">
+                <label>背景画像:</label>
+                <input type="file" name="gifImage" id="gifImage" accept="image/gif, image/GIF">
+                <br>
+                <img id="gifPreview" width="300px" height="300px">
+                <br>
+                <label>URL:</label>
+                <input type="text" name="gifURL" id="gifURL">
+                <br>
+                <label>QRコードの色:</label>
+                <br>
+                <label><input type="radio" name="gifQRColor" value="wb" checked>白黒</label>
+                <br>
+                <label><input id="gifQRColor" type="radio" name="gifQRColor" value="color">自定義</label>
+                <input id="gifColorCode" type="color" name="gifColorCode" value="#000000" style="display: none;">
+                <br>
+                <label>透明度:</label>
+                <input name="gifQRAlpha" type="range" min="155" max="255" step="10" value="255">
+                <br>
+                <input type="submit" value="QRコードを生成">
+            </form>
+        </div>
+        <div id="jpgFile">
             <label>背景画像:</label>
-            <input type="file" name="backImage2" id="backImage2" accept="image/*">
+            <input type="file" name="jpgImage" accept="image/jpg, image/JPG, image/png, image/PNG"
+                onchange="load_img(window.URL.createObjectURL(this.files[0]))"><br>
+            <input id='scal2' type='range' value='' min='10' max='400' oninput="scaling(value)"
+                style='display: none;'><br>
+            <canvas id='cvs2' width='300' height='300'></canvas><br>
+            <canvas id='out2' width='300' height='300' style="display: none;"></canvas>
             <br>
-            <span id="pngcanvas" style="display: none;">
-                <input id='scal2' type='range' value='' min='10' max='400' oninput="scaling(value)"
-                    style='display: none;'><br>
-                <canvas id='cvs2' width='300' height='300'></canvas><br>
-                <canvas id='out2' width='300' height='300' style="display: none;"></canvas>
-            </span>
-            <img id="preview" width="300px" height="300px">
-            <br>
-            <div id="icon">
+            <div id="icon2">
                 <label>アイコン（任意）:</label>
                 <label class="switch">
-                    <input type="checkbox" id="iconSwitch" onclick="handleSwitch(this)">
+                    <input type="checkbox" id="iconSwitch2" onclick="handleSwitch(this)">
                     <span class="slider round"></span>
                 </label>
                 <br>
@@ -177,74 +201,59 @@
                             </path>
                         </svg>
                     </button>
-                    <input type="hidden" name="iconImage2" value="" id="iconImage2">
+                    <input type="hidden" name="jpgIcon" value="" id="jpgIcon">
                     <br>
                     <img id="icon_preview" width="50px" height="50px">
                     <br>
                 </div>
             </div>
             <label>URL:</label>
-            <input type="text" name="urlText2" id="urlText2">
+            <input type="text" name="jpgURL" id="jpgURL">
             <br>
             <label>QRコードの色:</label>
             <br>
-            <label><input type="radio" name="qrColor2" value="wb" checked>白黒</label>
+            <label><input type="radio" name="jpgQRColor" value="wb" checked>白黒</label>
             <br>
-            <label><input type="radio" name="qrColor2" value="auto">自動検出</label>
+            <label><input type="radio" name="jpgQRColor" value="auto">自動検出</label>
             <br>
-            <label><input id="qrColor2" type="radio" name="qrColor2" value="color">自定義</label>
-            <input id="colorCode2" type="color" name="colorCode2" value="#000000" style="display: none;">
+            <label><input id="jpgQRColor" type="radio" name="jpgQRColor" value="color">自定義</label>
+            <input id="jpgColorCode" type="color" name="jpgColorCode" value="#000000" style="display: none;">
             <br>
             <label>透明度:</label>
-            <input name="qrAlpha2" id="alphaSlidebar2" type="range" min="155" max="255" step="10" value="255">
+            <input name="jpgQRAlpha" id="jpgQRAlpha" type="range" min="155" max="255" step="10" value="255">
             <br>
-            <input type="submit" value="QRコードを生成">
-        </form>
+            <input type="submit" value="生成" onclick="submitJPG()">
+        </div>
     </div>
 
     <script>
         const ICON = ['amazon.png', 'chrome.png', 'discord.png', 'facebook.png', 'google.png',
             'instagram.png', 'line.png', 'snapchat.png', 'tiktok.png', 'twitch.png',
             'twitter.png', 'wechat.png', 'weibo.png', 'whatsapp.png', 'youtube.png'];
-        var selectColor = document.getElementsByName("qrColor2");
-        var inputFile = document.getElementById("backImage2");
+        var selectColor1 = document.getElementsByName("gifQRColor");
+        var inputFile1 = document.getElementById("gifImage");
 
-        selectColor.forEach(function (selectColor) {
+        selectColor1.forEach(function (selectColor) {
             selectColor.addEventListener("change", function () {
                 if (selectColor.value === 'color') {
-                    document.getElementById("colorCode2").style.display = "inline-block";
+                    document.getElementById("gifColorCode").style.display = "inline-block";
                 } else {
-                    document.getElementById("colorCode2").style.display = "none";
-                    document.getElementById("colorCode2").value = "#000000";
+                    document.getElementById("gifColorCode").style.display = "none";
+                    document.getElementById("gifColorCode").value = "#000000";
                 }
             });
         });
 
         function changehidden(num) {
             var path = "icon/" + ICON[num];
-            document.getElementById('iconImage2').value = num;
+            document.getElementById('jpgIcon').value = num;
             document.getElementById('icon_preview').src = path;
         }
 
-        inputFile.addEventListener('change', (event) => {
+        inputFile1.addEventListener('change', (event) => {
             var [file] = event.target.files
-            var filename = event.target.files[0].name;
-            //if (file) {
-            //    document.getElementById("preview").setAttribute('src', URL.createObjectURL(file));
-            //}
-
-            if (filename.slice(-3) == "gif") {
-                document.getElementById("preview").setAttribute('src', URL.createObjectURL(file));
-                document.getElementById("preview").style.display = "block";
-                document.getElementById("pngcanvas").style.display = "none";
-                document.getElementById("icon").style.display = "none";
-                document.getElementById("iconImage2").value = "";
-                document.getElementById("icon_preview").setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg");
-            } else {
-                document.getElementById("pngcanvas").style.display = "block";
-                document.getElementById("icon").style.display = "block";
-                document.getElementById("preview").style.display = "none";
-                load_img(URL.createObjectURL(file));
+            if (file) {
+                document.getElementById("gifPreview").setAttribute('src', URL.createObjectURL(file));
             }
         })
 
@@ -337,8 +346,52 @@
             } else {
                 document.getElementById("iconSelect2").style.display = "none";
                 document.getElementById("icon_preview").setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg");
-                document.getElementById("iconImage2").value = "";
+                document.getElementById("jpgIcon").value = "";
             }
+        }
+
+        var selectColor2 = document.getElementsByName("jpgQRColor");
+
+        selectColor2.forEach(function (selectColor) {
+            selectColor.addEventListener("change", function () {
+                if (selectColor.value === 'color') {
+                    document.getElementById("jpgColorCode").style.display = "inline-block";
+                } else {
+                    document.getElementById("jpgColorCode").style.display = "none";
+                    document.getElementById("jpgColorCode").value = "#000000";
+                }
+            });
+        });
+
+        function submitQRForm() {
+            crop_img();
+            var outcanvas = document.getElementById("out2");
+            var iconCode = document.getElementById("jpgIcon").value;
+            for (i = 0; i < selectColor2.length; i++) {
+                if (selectColor2[i].checked)
+                    var color = selectColor2[i].value;
+            }
+            var colorCode = document.getElementById("jpgColorCode").value;
+            var alpha = document.getElementById("jpgQRAlpha").value;
+
+            backimage = outcanvas.toDataURL("image/JPEG");
+
+            var server_data = [
+                { "backimageURL": backimage },
+                { "iconCode": iconCode },
+                { "url": url },
+                { "color": color },
+                { "colorCode": colorCode },
+                { "alpha": alpha }
+            ];
+
+            $.ajax({
+                type: "POST",
+                url: "/qrform",
+                data: JSON.stringify(server_data),
+                contentType: "application/json",
+                dataType: 'json'
+            });
         }
     </script>
 

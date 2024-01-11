@@ -39,7 +39,9 @@
             <a href="qrcode.html">
                 <button>やり直し</button>
             </a>
-            <button>ダウンロード</button>
+            <a href="{{ url_for('static', filename=image_path) }}" download>
+                <button>ダウンロード</button>
+            </a>
         </div>
     </div>
 </body>

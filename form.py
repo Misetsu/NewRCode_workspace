@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, send_file
+from flask import Flask, request, jsonify, render_template, redirect, url_for
 from PIL import Image
 from io import BytesIO
 from datetime import datetime
@@ -94,7 +94,7 @@ def gif():
         
         pre2(filepath1, url, filename1, color, colorCode, alpha)
         
-        qrpath = "./image/" + filename1
+        qrpath = "./images/" + filename1
         
         return render_template("result.html", image_path=qrpath)
     
@@ -123,11 +123,14 @@ def jpg():
         
         pre(filepath1, filepath2, url, filename1, color, colorCode, alpha)
         
-        qrpath = "./image/" + filename1
+        qrpath = "./images/" + filename1
         
-        return render_template("result.html", image_path=qrpath)
+        return redirect(url_for('result', qrpath=qrpath))
             
-
+@app.route('/result')
+def result(qrpath):
+    return render_template("result.html", image_path=qrpath)
+    
 @app.route('/save', methods=["GET", "POST"])
 def saveImage():
     if request.method == 'POST':

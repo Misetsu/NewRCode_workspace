@@ -103,7 +103,7 @@ cvs.ontouchmove =
         return false // イベントを伝搬しない
     }
 cvs.onmousewheel = function (_ev) {    // canvas ホイールで拡大縮小
-    let scl = parseInt(parseInt(document.getElementById('scal').value) + _ev.wheelDelta * 0.05)
+    let scl = parseInt(parseInt(document.getElementById('scal2').value) + _ev.wheelDelta * 0.05)
     if (scl < 10) scl = 10
     if (scl > 400) scl = 400
     document.getElementById('scal2').value = scl
@@ -161,7 +161,10 @@ function submitQRForm() {
         url: "/jpgtest",
         data: JSON.stringify(server_data),
         contentType: "application/json",
-        dataType: 'json'
+        dataType: 'json',
+        success: function (result) {
+            window.location.href = result;
+        }
     });
 }
 

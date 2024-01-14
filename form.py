@@ -130,6 +130,10 @@ def jpg():
 @app.route('/result')
 def result(qrpath):
     return render_template("result.html", image_path=qrpath)
+
+@app.route("/result/images/qrcode")
+def reresult():
+    return redirect(url_for("result"))
     
 @app.route('/save', methods=["GET", "POST"])
 def saveImage():

@@ -1,0 +1,76 @@
+body {
+    margin: 0px;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    background: url(Homelogo_IMG2.png) no-repeat;
+    width: 600px;
+    height: 150px;
+    text-indent: -9999px;
+}
+
+.headnav {
+    background-color: #878787;
+    border-bottom: 5px solid #cccccc;
+}
+
+.headnav p {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+.icon_Back {
+    padding-left: 10px;
+}
+
+.bodynav table {
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.bodynav table td {
+    width: 50%;
+    padding: 10px 10px;
+}
+
+.bodynav table td a {
+    text-decoration: none;
+}
+
+#line {
+    margin: 30px auto;
+    width: 80%;
+}
+
+#line th {
+    text-align: left;
+    font-size: larger;
+    padding-top: 30px;
+}
+
+#line tr td ol {
+    text-align: left;
+}
+
+#site {
+    margin: 30px auto;
+    width: 80%;
+}
+
+#site th {
+    text-align: left;
+    font-size: larger;
+    padding-top: 30px;
+}
+
+#site tr td ol {
+    text-align: left;
+}
+
+img {
+    border: 2px solid #555;
+}

@@ -176,7 +176,7 @@ filetype.forEach(function (selecttype) {
             document.getElementById("jpgFile").style.display = "none";
             document.getElementById("gifFile").style.display = "block";
         } else {
-            document.getElementById("jpgFile").style.display = "block";
+            document.getElementById("jpgFile").style.display = "flex";
             document.getElementById("gifFile").style.display = "none";
         }
     });

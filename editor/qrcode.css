@@ -50,8 +50,8 @@ header {
 }
 
 .bodydiv {
-    margin-top: 90px;
-    margin-left: 2%;
+    margin-top: 100px;
+    margin-left: 10%;
     padding-bottom: 2%;
 }
 
@@ -128,4 +128,28 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+#jpgFile {
+    display: flex;
+}
+
+#jpg1 {
+    flex: 1;
+}
+
+#jpg2 {
+    flex: 1;
+}
+
+#gifFile form {
+    display: flex;
+}
+
+#gif1 {
+    flex: 1;
+}
+
+#gif2 {
+    flex: 1;
 }

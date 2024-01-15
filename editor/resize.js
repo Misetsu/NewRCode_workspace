@@ -26,6 +26,11 @@ function autoCard() {
     document.getElementById("Width").value = "283";
 }
 
+function autoRatio() {
+    document.getElementById("Height").value = "500";
+    document.getElementById("Width").value = "500";
+}
+
 function swapWH() {
     var w = document.getElementById("Width").value;
     document.getElementById("Width").value = document.getElementById("Height").value;

@@ -52,8 +52,14 @@
                     <input type="submit" value="QRコードを生成">
                 </div>
                 <div id="gif2">
-                    <label>URL:</label>
-                    <input type="text" name="gifURL" id="gifURL" size="60">
+                    <label>テキスト:</label>
+                    <ul>
+                        <li>・サイトURL</li>
+                        <li>・半角英数字（半角スペースを含めて、58文字以内）</li>
+                    </ul>
+                    <label>が入力可能です。</label>
+                    <br>
+                    <input type="text" name="jpgURL" id="jpgURL" size="60">
                     <br><br>
                     <label>QRコードの色:</label>
                     <br>
@@ -128,7 +134,6 @@
                                 </path>
                             </svg>
                         </button>
-                        <br>
                         <button class="shape_btn" onclick="changehidden(5);" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                                 <path
@@ -217,7 +222,13 @@
                     </div>
                 </div>
                 <br>
-                <label>URL:</label>
+                <label>テキスト:</label>
+                <ul>
+                    <li>・サイトURL</li>
+                    <li>・半角英数字（半角スペースを含めて、58文字以内）</li>
+                </ul>
+                <label>が入力可能です。</label>
+                <br>
                 <input type="text" name="jpgURL" id="jpgURL" size="60">
                 <br>
                 <br>

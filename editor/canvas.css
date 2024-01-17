@@ -58,35 +58,34 @@ body input[type="radio"] {
 /*プルダウンのサイズ*/
 body input[type="number"] {
     width: 80px;
-    height: 30px;
+    height: x-large;
 }
 
 /*チェックボックスのサイズ*/
 body input[type="checkbox"] {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     vertical-align: middle;
 }
 
 /*ファイル選択のサイズ*/
 body input[type="file"] {
-    font-size: 17px;
+    font-size: larger;
 }
 
 /*ナンバー選択のサイズ*/
 body input[type="number"] {
-    font-size: 30px;
+    font-size: x-large;
     text-align: right;
 }
 
 /*input*/
 body input[type="submit"] {
-    font-size: 25px;
-    margin-left: 225px;
+    font-size: larger;
 }
 
 body input[type="text"] {
-    font-size: 20px;
+    font-size: large;
     width: 310px;
 }
 
@@ -196,6 +195,7 @@ header {
     background-color: #d7d7d7;
     padding: 10px;
     padding-top: 85px;
+    margin-bottom: 20px;
     left: 80px;
     width: 350px;
     height: 100%;
@@ -240,9 +240,32 @@ div.aligncenter3 {
     border: none;
 }
 
+div.aligncenter4 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border: none;
+}
+
 /*ホーバー*/
 button#addText:hover {
     background-color: rgb(180, 180, 180);
+}
+
+button.textDesign:hover {
+    background-color: #B4B4B4;
+}
+
+button.canvasSize1:hover {
+    background-color: #B4B4B4;
+}
+
+button.canvasSize2:hover {
+    background-color: #B4B4B4;
+}
+
+button.layer:hover {
+    background-color: #B4B4B4;
 }
 
 /*新規クラス(4つの項目なので25%)*/
@@ -259,7 +282,7 @@ button#addText:hover {
 .canvasSize1 {
     width: 25%;
     height: 35px;
-    font-size: 20px;
+    font-size: large;
     margin-left: auto;
     margin-right: auto;
     background-color: #d7d7d7;
@@ -269,7 +292,7 @@ button#addText:hover {
 .canvasSize2 {
     width: 100%;
     height: 35px;
-    font-size: 20px;
+    font-size: large;
     margin-left: auto;
     margin-right: auto;
     background-color: #d7d7d7;
@@ -286,6 +309,14 @@ button.canvasSize1:hover {
 
 button.canvasSize2:hover {
     background-color: #B4B4B4;
+}
+
+button.layer {
+    width: 25%;
+    font-size: 20px;
+    margin: 5px auto;
+    background-color: #d7d7d7;
+    border: none;
 }
 
 /*↑*/
@@ -376,9 +407,9 @@ button.canvasSize2:hover {
 }
 
 #Height {
-    height: 30px;
+    height: x-large;
     width: 70%;
-    font-size: 30px;
+    font-size: x-large;
     text-align: right;
     border: none;
     background-color: #d7d7d7;
@@ -386,9 +417,9 @@ button.canvasSize2:hover {
 }
 
 #Width {
-    height: 30px;
+    height: x-large;
     width: 70%;
-    font-size: 30px;
+    font-size: x-large;
     text-align: right;
     border: none;
     background-color: #d7d7d7;
@@ -398,7 +429,7 @@ button.canvasSize2:hover {
 button#swap {
     width: 100%;
     height: 35px;
-    font-size: 30px;
+    font-size: x-large;
     background-color: #d7d7d7;
     border: none;
 }
@@ -413,26 +444,27 @@ button#swap:hover {
 
 /*1.テキスト*/
 #boldText {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #italicText {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #underlineText {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #slashText {
-    font-size: 25px;
+    font-size: larger;
 }
 
 /*テキスト挿入*/
 #addText {
-    font-size: 30px;
+    font-size: x-large;
     width: 100%;
-    height: 35px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     background-color: #d7d7d7;
     border: none;
 }
@@ -447,9 +479,9 @@ button#swap:hover {
 
 /*枠線の幅セレクトボックス*/
 #textBorderWidth {
-    font-size: 25px;
+    font-size: larger;
     text-align: center;
-    height: 30px;
+    height: x-large;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -479,16 +511,16 @@ button#swap:hover {
 #preview2 {
     border: 1px solid #181818;
     /* 枠線のスタイルを指定 */
-    margin-left: 30px;
+    margin-left: x-large;
 }
 
 /*URLを入力するテキストボックス*/
 
 /*3.図形*/
 #shapeBorderWidth {
-    font-size: 25px;
+    font-size: larger;
     text-align: center;
-    height: 30px;
+    height: x-large;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -503,42 +535,43 @@ button#swap:hover {
 
 /*4.リサイズ*/
 #A3 {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #A4 {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #A5 {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #B4 {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #B5 {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #Card {
-    font-size: 25px;
+    font-size: larger;
 }
 
 #sizeChange {
-    font-size: 25px;
-    margin-left: 225px;
+    font-size: larger;
+    margin-right: 5px;
+    float: right;
 }
 
 .item {
-    font-size: 25px;
+    font-size: larger;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .submenu {
-    font-size: 30px;
+    font-size: x-large;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -605,4 +638,18 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+#add_result {
+    font-size: larger;
+    margin-right: 5px;
+    float: right;
 }

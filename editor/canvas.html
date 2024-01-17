@@ -25,20 +25,20 @@
             <a href="home.html">
                 <h1 class="header-logo">NewRCode</h1>
             </a>
-            <button class="icon_L" id="undo"><!--元に戻す-->
+            <!-- <button class="icon_L" id="undo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path
                         d="M8 7V11L2 6L8 1V5H13C17.4183 5 21 8.58172 21 13C21 17.4183 17.4183 21 13 21H4V19H13C16.3137 19 19 16.3137 19 13C19 9.68629 16.3137 7 13 7H8Z">
                     </path>
                 </svg>
             </button>
-            <button class="icon_L" id="redo"><!--やり直し-->
+            <button class="icon_L" id="redo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path
                         d="M16 7H11C7.68629 7 5 9.68629 5 13C5 16.3137 7.68629 19 11 19H20V21H11C6.58172 21 3 17.4183 3 13C3 8.58172 6.58172 5 11 5H16V1L22 6L16 11V7Z">
                     </path>
                 </svg>
-            </button>
+            </button> -->
             <button class="icon_L" onclick="selectDownload()"><!--ダウンロードアイコン-->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path
@@ -59,13 +59,13 @@
                     </path>
                 </svg>
             </span>
-            <button class="icon_R"><!--ユーザーアイコン-->
+            <!-- <button class="icon_R">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path
                         d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12.1597 16C10.1243 16 8.29182 16.8687 7.01276 18.2556C8.38039 19.3474 10.114 20 12 20C13.9695 20 15.7727 19.2883 17.1666 18.1081C15.8956 16.8074 14.1219 16 12.1597 16ZM12 4C7.58172 4 4 7.58172 4 12C4 13.8106 4.6015 15.4807 5.61557 16.8214C7.25639 15.0841 9.58144 14 12.1597 14C14.6441 14 16.8933 15.0066 18.5218 16.6342C19.4526 15.3267 20 13.7273 20 12C20 7.58172 16.4183 4 12 4ZM12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5ZM12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7Z">
                     </path>
                 </svg>
-            </button>
+            </button> -->
             <button class="icon_R2" onclick="allClear()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path
@@ -180,13 +180,13 @@
             <div class="submenu">
                 <label>背景画像</label>
             </div>
-            <center>
+            <div class="center">
                 <input type="file" name="backImage" onchange="load_img(window.URL.createObjectURL(this.files[0]))"><br>
                 <input id='scal' type='range' value='' min='10' max='400' oninput="scaling(value)"
                     style='display: none;'><br>
                 <canvas id='cvs' width='250' height='250'></canvas><br>
                 <canvas id='out' width='250' height='250' style="display: none;"></canvas>
-            </center>
+            </div>
             <div class="submenu">
                 <label>アイコン（任意）:</label>
                 <label class="switch">
@@ -378,18 +378,21 @@
                 <br>
                 <label class="item">透明度:</label>
                 <input name="qrAlpha" id="alphaSlidebar" type="range" min="155" max="255" step="10" value="255">
-                <br>
-                <input type="submit" value="生成" onclick="submitQRForm()">
+                <div class="right">
+                    <input type="submit" value="生成" onclick="submitQRForm()">
+                </div>
             </div>
         </div>
         <hr>
         <div class="submenu">
             <label>結果:</label>
         </div>
-        <center>
+        <div class="center">
             <img id="result_qr" width="250px" height="250px">
-        </center>
-        <button id="add_result" onclick="addQRCode()">追加</button>
+        </div>
+        <div class="right">
+            <button id="add_result" onclick="addQRCode()">追加</button>
+        </div>
     </div>
 
     <div class="sidenav" id="contents3">
@@ -406,7 +409,7 @@
         <h1>図形</h1>
         <br>
         <div class="item">
-            <center>
+            <div class="center">
                 <button class="shape_btn" id="shape1">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                         <path
@@ -546,7 +549,7 @@
                         </path>
                     </svg>
                 </button>
-            </center>
+            </div>
         </div>
         <hr>
         <div class="submenu">
@@ -637,12 +640,36 @@
     </div>
 
     <div class="sidenav" id="contents6">
-        <h2>レイヤー</h2>
-        <div id="button-container">
-            <button id="sendToBackBtn">最背面へ</button>
-            <button id="bringToFrontBtn">最前面へ</button>
-            <button id="sendBackwardsBtn">背面へ</button>
-            <button id="bringForwardBtn">前面へ</button>
+        <h1>レイヤー</h1>
+        <div class="aligncenter4">
+            <button title="前面へ" class="layer" id="sendToBackBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                    <path
+                        d="M14 3C14.5523 3 15 3.44772 15 4V9H20C20.5523 9 21 9.44772 21 10V20C21 20.5523 20.5523 21 20 21H10C9.44772 21 9 20.5523 9 20V15H4C3.44772 15 3 14.5523 3 14V4C3 3.44772 3.44772 3 4 3H14ZM13 5H5V13H13V5Z">
+                    </path>
+                </svg>
+            </button>
+            <button title="背面へ" class="layer" id="bringToFrontBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                    <path
+                        d="M14 3C14.5523 3 15 3.44772 15 4V9H20C20.5523 9 21 9.44772 21 10V20C21 20.5523 20.5523 21 20 21H10C9.44772 21 9 20.5523 9 20V15H4C3.44772 15 3 14.5523 3 14V4C3 3.44772 3.44772 3 4 3H14ZM13 5H5V13H9V10C9 9.44772 9.44772 9 10 9H13V5Z">
+                    </path>
+                </svg>
+            </button>
+            <button title="最前面へ" class="layer" id="sendBackwardsBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                    <path
+                        d="M11 3C11.5523 3 12 3.44772 12 4V6H17C17.5523 6 18 6.44772 18 7V12H20C20.5523 12 21 12.4477 21 13V20C21 20.5523 20.5523 21 20 21H13C12.4477 21 12 20.5523 12 20V18H7C6.44772 18 6 17.5523 6 17V12H4C3.44772 12 3 11.5523 3 11V4C3 3.44772 3.44772 3 4 3H11ZM16 8H8V16H16V8Z">
+                    </path>
+                </svg>
+            </button>
+            <button title="最背面へ" class="layer" id="bringForwardBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                    <path
+                        d="M11 3C11.5523 3 12 3.44772 12 4V6H17C17.5523 6 18 6.44772 18 7V12H20C20.5523 12 21 12.4477 21 13V20C21 20.5523 20.5523 21 20 21H13C12.4477 21 12 20.5523 12 20V18H7C6.44772 18 6 17.5523 6 17V12H4C3.44772 12 3 11.5523 3 11V4C3 3.44772 3.44772 3 4 3H11ZM16 8H12V11C12 11.5523 11.5523 12 11 12H8V16H12V13C12 12.4477 12.4477 12 13 12H16V8Z">
+                    </path>
+                </svg>
+            </button>
         </div>
     </div>
 

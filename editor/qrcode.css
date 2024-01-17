@@ -13,6 +13,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
+    font-size: larger;
 }
 
 header {
@@ -50,8 +51,7 @@ header {
 }
 
 .bodydiv {
-    margin-top: 100px;
-    margin-left: 10%;
+    margin-top: 8%;
     padding-bottom: 2%;
 }
 
@@ -152,4 +152,21 @@ input:checked+.slider:before {
 
 #gif2 {
     flex: 1;
+}
+
+.center {
+    text-align: center;
+}
+
+.picdiv {
+    margin-top: 8%;
+    margin-left: 15%;
+    padding-bottom: 2%;
+}
+
+.center_button {
+    width: 20%;
+    font-size: larger;
+    display: inline-block;
+    margin-top: 3%;
 }

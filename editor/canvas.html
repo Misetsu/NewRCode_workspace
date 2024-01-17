@@ -138,55 +138,65 @@
         </ul>
     </div>
 
+    <!--↓↓↓-->
     <div class="sidenav" id="contents1">
-        <h2>テキスト</h2>
-        <button id="addText" onclick="addText()">文字を入れる</button>
-        <br>
-        <button class="textDesign" onclick="boldText()"><b>B</b></button>
-        <button class="textDesign" onclick="italicText()"><i>I</i></button>
-        <button class="textDesign" onclick="underlineText()"><u>U</u></button>
-        <button class="textDesign" onclick="slashText()"><s>S</s></button>
-        <br>
-        <br>
+        <h1>テキスト</h1>
+        <div class="aligncenter1">
+            <button id="addText" onclick="addText()">文字を入れる</button>
+        </div>
+        <div class="aligncenter2">
+            <input title="文字色" type="color" value="#000000" class="textColor" id="textColor">
+            <button title="太字" class="textDesign" onclick="boldText()"><b>B</b></button>
+            <button title="斜体" class="textDesign" onclick="italicText()"><i>I</i></button>
+            <button title="下線" class="textDesign" onclick="underlineText()"><u>U</u></button>
+            <button title="中心線" class="textDesign" id="right" onclick="slashText()"><s>S</s></button>
+        </div>
         <hr>
-        枠線
-        <br>
-        幅：
-        <select name="textBorderWidth" id="textBorderWidth">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <br>
-        色：<input type="color" value="#000000" id="textBorderColor">
-        <br>
-        塗りつぶし
-        <br>
-        色：<input type="color" value="#000000" id="textColor">
-        <br>
+        <div class="item">
+            <label>枠線の太さ:</label>
+            <select name="textBorderWidth" id="textBorderWidth">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="item">
+            <label class="borderRight">枠線の色:</label>
+            <input type="color" value="#000000" id="textBorderColor">
+        </div>
     </div>
+    <!--↑↑↑-->
 
     <div class="sidenav" id="contents2">
-        <h2>QRコード生成</h2>
-        <br>
+        <h1>QRコード生成</h1>
         <div class="qrimage">
-            <label>背景画像:</label>
+            <div class="submenu">
+            <label>背景画像</label>
+            </div>
+            <center>
             <input type="file" name="backImage" onchange="load_img(window.URL.createObjectURL(this.files[0]))"><br>
             <input id='scal' type='range' value='' min='10' max='400' oninput="scaling(value)"
                 style='display: none;'><br>
-            <canvas id='cvs' width='200' height='200'></canvas><br>
-            <canvas id='out' width='200' height='200' style="display: none;"></canvas>
+            <canvas id='cvs' width='250' height='250'></canvas><br>
+            <canvas id='out' width='250' height='250' style="display: none;"></canvas>
+            </center>
             <br>
+            <hr>
+            <div class="submenu">
             <label>アイコン（任意）:</label>
-            <br>
+            </div>
+            <div class="item">
+            <table id="table">
+                <tr>
+                    <td>
             <button class="shape_btn" onclick="changehidden(0);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -195,6 +205,8 @@
                     </path>
                 </svg>
             </button>
+                    </td>
+                    <td>    
             <button class="shape_btn" onclick="changehidden(1);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -203,6 +215,8 @@
                     </path>
                 </svg>
             </button>
+                    </td>
+                    <td>
             <button class="shape_btn" onclick="changehidden(2);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -211,6 +225,8 @@
                     </path>
                 </svg>
             </button>
+                    </td>
+                    <td>
             <button class="shape_btn" onclick="changehidden(3);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -219,6 +235,8 @@
                     </path>
                 </svg>
             </button>
+                    </td>
+                    <td>
             <button class="shape_btn" onclick="changehidden(4);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -227,7 +245,15 @@
                     </path>
                 </svg>
             </button>
-            <br>
+                    </td>
+                    
+                    <td rowspan="3">
+                        <input type="hidden" name="iconImage" value="" id="iconImage">
+                        <img id="preview2" width="100px" height="100px">
+                        </td>
+                </tr>
+            <tr>
+                <td>
             <button class="shape_btn" onclick="changehidden(5);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -236,6 +262,8 @@
                     </path>
                 </svg>
             </button>
+                </td>
+                <td>
             <button class="shape_btn" onclick="changehidden(6);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -244,6 +272,8 @@
                     </path>
                 </svg>
             </button>
+                </td>
+                <td>
             <button class="shape_btn" onclick="changehidden(7);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -252,6 +282,8 @@
                     </path>
                 </svg>
             </button>
+                </td>
+                <td>
             <button class="shape_btn" onclick="changehidden(8);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -260,6 +292,8 @@
                     </path>
                 </svg>
             </button>
+                </td>
+                <td>
             <button class="shape_btn" onclick="changehidden(9);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -268,7 +302,10 @@
                     </path>
                 </svg>
             </button>
-            <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
             <button class="shape_btn" onclick="changehidden(10);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -277,6 +314,8 @@
                     </path>
                 </svg>
             </button>
+                </td>
+                <td>
             <button class="shape_btn" onclick="changehidden(11);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -285,6 +324,8 @@
                     </path>
                 </svg>
             </button>
+                </td>
+                <td>
             <button class="shape_btn" onclick="changehidden(12);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -293,6 +334,8 @@
                     </path>
                 </svg>
             </button>
+                </td>
+                <td>
             <button class="shape_btn" onclick="changehidden(13);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -301,6 +344,8 @@
                     </path>
                 </svg>
             </button>
+                </td>
+                <td>
             <button class="shape_btn" onclick="changehidden(14);" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
@@ -309,34 +354,43 @@
                     </path>
                 </svg>
             </button>
-            <input type="hidden" name="iconImage" value="" id="iconImage">
-            <br>
-            <img id="preview2" width="50px" height="50px">
-            <br>
+                </td>
+                </tr>
+            </table>
+            </div>
+            <hr>
+            <div class="submenu">
             <label>URL:</label>
-            <input type="text" name="urlText" id="urlText">
+            </div>
+            <input type="text" name="urlText" id="urlText" size="40">
             <br>
-            <label>QRコードの色:</label>
+            <div class="submenu">
+            <label id="qrColor">QRコードの色:</label>
+            </div>
+            <div class="item">
+            <label class="item"><input type="radio" name="qrColor" value="wb" checked>白黒</label>
             <br>
-            <label><input type="radio" name="qrColor" value="wb" checked>白黒</label>
+            <label class="item"><input type="radio" name="qrColor" value="auto">自動検出</label>
             <br>
-            <label><input type="radio" name="qrColor" value="auto">自動検出</label>
-            <br>
-            <label><input id="qrColor" type="radio" name="qrColor" value="color">自定義</label>
+            <label class="item"><input id="qrColor" type="radio" name="qrColor" value="color">自定義</label>
             <input id="colorCode" type="color" name="colorCode" value="#000000" style="display: none;">
             <br>
-            <label>透明度:</label>
+            <label class="item">透明度:</label>
             <input name="qrAlpha" id="alphaSlidebar" type="range" min="155" max="255" step="10" value="255">
             <br>
             <input type="submit" value="生成" onclick="submitQRForm()">
+            </div>
         </div>
-        <br>
-        結果:
-        <br>
-        <img id="result_qr" width="200px" height="200px">
+        <hr>
+        <div class="submenu">
+        <label>結果:</label>
+        </div>
+        <center>
+        <img id="result_qr" width="250px" height="250px">
+        </center>
     </div>
     <div class="sidenav" id="contents3">
-        <h2>画像アップロード</h2>
+        <h1>画像アップロード</h1>
         <form class="image" action="" method="POST" enctype="multipart/form-data">
             <div class="upload-area">
                 <p>ドラッグ＆ドロップ<br>またはクリック</p>
@@ -345,9 +399,10 @@
         </form>
     </div>
     <div class="sidenav" id="contents4">
-        <h2>図形</h2>
+        <h1>図形</h1>
         <br>
         &emsp;
+        <div class="item">
         <button class="shape_btn" id="shape1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                 <path
@@ -376,15 +431,14 @@
                 </path>
             </svg>
         </button>
-        <br>
-        <hr>
-        <br>
-        <div>
-            <h4>枠線</h4>
         </div>
-        <div>
+        <hr>
+        <div class="submenu">
+            <label>枠線</label>
+        </div>
+        <div class="item">
             <span>
-                幅：
+                <label class="item">幅：</label>
                 <select name="shapeBorderWidth" id="shapeBorderWidth">
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -400,62 +454,74 @@
                 </select>
             </span>
             <span>
-                色：<input type="color" value="#000000" id="shapeBorderColor">
+                <label class="item">色：</label><input type="color" value="#000000" id="shapeBorderColor">
             </span>
         </div>
-        <div>
-            <h4>塗りつぶし</h4>
+        <hr>
+        <div class="submenu">
+            <label>塗りつぶし</label>
         </div>
-        <div>
+        <div class="item">
             <span>
-                色：<input type="color" value="#000000" id="shapeColor">
-                &emsp;
-                透明：<input type="checkbox" id="shapeTransparent">
+                <!-- class="inputColor" -->
+                <label>色：</label><input type="color" value="#000000" id="shapeColor"><br>
+            </span>
+        </div>
+        <div class="item">
+            <span>  
+                <label>透明：<input type="checkbox" id="shapeTransparent"></label>
             </span>
         </div>
     </div>
     <div class="sidenav" id="contents5">
-        <h2>リサイズ</h2>
-        <p>縦
-            <input type="number" id="Height">
-            px
-        </p>
-        <p>横
-            <input type="number" id="Width">
-            px
-        </p>
-        <button id="A3" onclick="autoA3()">A3</button>
-        <button id="A4" onclick="autoA4()">A4</button>
-        <button id="A5" onclick="autoA5()">A5</button>
-        <button id="B4" onclick="autoB4()">B4</button>
-        <button id="B5" onclick="autoB5()">B5</button>
-        <button id="Card" onclick="autoCard()">はがき</button>
-        <button id="swap" onclick="swapWH()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="16">
-                <path
-                    d="M11.9498 7.94975L10.5356 9.36396L8.00079 6.828L8.00004 20H6.00004L6.00079 6.828L3.46451 9.36396L2.05029 7.94975L7.00004 3L11.9498 7.94975ZM21.9498 16.0503L17 21L12.0503 16.0503L13.4645 14.636L16.0008 17.172L16 4H18L18.0008 17.172L20.5356 14.636L21.9498 16.0503Z">
-                </path>
-            </svg>
-        </button>
+        <h1>リサイズ</h1>
         <br>
-        <button onclick="reSize()">変更</button>
+        <p><label class="submenu">縦</label>
+            <input type="number" id="Height"><label class="submenu">px</label>
+        </p>
+            <button id="swap" onclick="swapWH()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+                    <path
+                        d="M11.9498 7.94975L10.5356 9.36396L8.00079 6.828L8.00004 20H6.00004L6.00079 6.828L3.46451 9.36396L2.05029 7.94975L7.00004 3L11.9498 7.94975ZM21.9498 16.0503L17 21L12.0503 16.0503L13.4645 14.636L16.0008 17.172L16 4H18L18.0008 17.172L20.5356 14.636L21.9498 16.0503Z">
+                    </path>
+                </svg>
+            </button>        
+        <p><label class="submenu">横</label>
+            <input type="number" id="Width"><label class="submenu">px</label>
+        </p>
+        <div class="aligncenter2">
+        <button id="A3" class="canvasSize1" onclick="autoA3()">A3</button>
+        <button id="A4" class="canvasSize1" onclick="autoA4()">A4</button>
+        <button id="A5" class="canvasSize1" onclick="autoA5()">A5</button>
+        <button id="B4" class="canvasSize1" onclick="autoB4()">B4</button>
+        <button id="B5" class="canvasSize1" onclick="autoB5()">B5</button>
+        </div>
+        <div class="aligncenter3">
+        <button id="Card"  class="canvasSize2" onclick="autoCard()">はがき</button>
+        </div>
+        <br>
+            <button id="sizeChange" onclick="reSize()">変更</button>
+        <br>
         <br>
         <hr>
-        <br>
-        <div>
-            <h4>背景</h4>
+        <div class="submenu">
+            <label>背景</label>
         </div>
-        <div>
+        <div class="item">
             <span>
-                色：<input type="color" value="#FFFFFF" id="backColor">
-                &emsp;
-                透明：<input type="checkbox" id="backTransparent">
+                <label>色：</label><input type="color" value="#FFFFFF" id="backColor"><br>
+            </span>
+        </div>
+        <div class="item">
+            <span>
+                <label>透明：<input type="checkbox" id="backTransparent"></label>
             </span>
         </div>
     </div>
 
     <div class="sidenav" id="contents6">
-        <h2>レイヤー</h2>
+        <h1>レイヤー</h1>
+        <br>
         <button onclick="addLayer()">Add</button>
     </div>
 

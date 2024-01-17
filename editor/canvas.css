@@ -240,40 +240,16 @@ div.aligncenter3 {
     border: none;
 }
 
+div.aligncenter4 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border: none;
+}
+
 /*ホーバー*/
 button#addText:hover {
     background-color: rgb(180, 180, 180);
-}
-
-/*新規クラス(4つの項目なので25%)*/
-.textDesign {
-    width: 25%;
-    height: 35px;
-    font-size: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #d7d7d7;
-    border: none;
-}
-
-.canvasSize1 {
-    width: 25%;
-    height: 35px;
-    font-size: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #d7d7d7;
-    border: none;
-}
-
-.canvasSize2 {
-    width: 100%;
-    height: 35px;
-    font-size: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #d7d7d7;
-    border: none;
 }
 
 button.textDesign:hover {
@@ -288,6 +264,50 @@ button.canvasSize2:hover {
     background-color: #B4B4B4;
 }
 
+button.layer:hover{
+    background-color: #B4B4B4;
+}
+
+/*新規クラス(4つの項目なので25%)*/
+button.textDesign {
+    width: 25%;
+    height: 35px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+button.canvasSize1 {
+    width: 25%;
+    height: 35px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+button.canvasSize2 {
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+button.layer {
+    width: 25%;
+    height: 35px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7d7d7;
+    border: none;
+}
 /*↑*/
 #movable {
     width: 595px;

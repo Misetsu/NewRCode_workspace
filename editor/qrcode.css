@@ -142,7 +142,7 @@ input:checked+.slider:before {
     flex: 1;
 }
 
-#gifFile form {
+#gifFile form span {
     display: flex;
 }
 

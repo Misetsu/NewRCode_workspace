@@ -43,34 +43,40 @@
         <br>
         <div id="gifFile" style="display: none;">
             <form class="qrimage" action="/giftest" method="POST" enctype="multipart/form-data">
-                <div id="gif1">
-                    <label>背景画像:</label>
-                    <input type="file" name="gifImage" id="gifImage" accept="image/gif, image/GIF">
-                    <br><br>
-                    <img id="gifPreview" width="400px" height="400px">
-                    <br><br>
-                    <input type="submit" value="QRコードを生成">
-                </div>
-                <div id="gif2">
-                    <label>テキスト:</label>
-                    <ul>
-                        <li>・サイトURL</li>
-                        <li>・半角英数字（半角スペースを含めて、58文字以内）</li>
-                    </ul>
-                    <label>が入力可能です。</label>
-                    <br>
-                    <input type="text" name="jpgURL" id="jpgURL" size="60">
-                    <br><br>
-                    <label>QRコードの色:</label>
-                    <br>
-                    <label><input type="radio" name="gifQRColor" value="wb" checked>白黒</label>
-                    <br>
-                    <label><input id="gifQRColor" type="radio" name="gifQRColor" value="color">自定義</label>
-                    <input id="gifColorCode" type="color" name="gifColorCode" value="#000000" style="display: none;">
-                    <br><br>
-                    <label>透明度:</label>
-                    <input name="gifQRAlpha" type="range" min="155" max="255" step="10" value="255">
-                </div>
+                <span>
+                    <div id="gif1">
+                        <label>背景画像:</label>
+                        <input type="file" name="gifImage" id="gifImage" accept="image/gif, image/GIF">
+                        <br><br>
+                        <img id="gifPreview" width="400px" height="400px">
+                        <br>
+                    </div>
+                    <div id="gif2">
+                        <label>テキスト:</label>
+                        <ul>
+                            <li>・サイトURL</li>
+                            <li>・半角英数字（半角スペースを含めて、58文字以内）</li>
+                        </ul>
+                        <label>が入力可能です。</label>
+                        <br>
+                        <input type="text" name="gifURL" id="gifURL" size="60">
+                        <br><br>
+                        <label>QRコードの色:</label>
+                        <br>
+                        <label><input type="radio" name="gifQRColor" value="wb" checked>白黒</label>
+                        <br>
+                        <label><input id="gifQRColor" type="radio" name="gifQRColor" value="color">自定義</label>
+                        <input id="gifColorCode" type="color" name="gifColorCode" value="#000000"
+                            style="display: none;">
+                        <br><br>
+                        <label>透明度:</label>
+                        <input name="gifQRAlpha" type="range" min="155" max="255" step="10" value="255">
+                        <br><br>
+                        <p>画像のサイズによって、時間がかかるかもしれません。</p>
+                    </div>
+                </span>
+                <br>
+                <input type="submit" value="QRコードを生成">
             </form>
         </div>
         <div id="jpgFile">

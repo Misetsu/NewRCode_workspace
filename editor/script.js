@@ -1,6 +1,6 @@
-let lockHistory = false;
-const undo_history = [];
-const redo_history = [];
+// let lockHistory = false;
+// const undo_history = [];
+// const redo_history = [];
 
 var canvas = this.__canvas = new fabric.Canvas('canvas', { backgroundColor: "#fff" });
 canvas.setHeight(document.getElementById("movable").clientHeight);
@@ -8,7 +8,7 @@ canvas.setWidth(document.getElementById("movable").clientWidth);
 document.getElementById("Height").value = "842";
 document.getElementById("Width").value = "595";
 
-undo_history.push(JSON.stringify(canvas));
+// undo_history.push(JSON.stringify(canvas));
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'blue';
 fabric.Object.prototype.cornerStyle = 'circle';
@@ -290,48 +290,48 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-canvas.on("object:added", function () {
-    if (lockHistory) return;
-    console.log("object:added");
-    undo_history.push(JSON.stringify(canvas));
-    redo_history.length = 0;
-    console.log(undo_history.length);
-});
+// canvas.on("object:added", function () {
+//     if (lockHistory) return;
+//     console.log("object:added");
+//     undo_history.push(JSON.stringify(canvas));
+//     redo_history.length = 0;
+//     console.log(undo_history.length);
+// });
 
-canvas.on("object:modified", function () {
-    if (lockHistory) return;
-    console.log("object:modified");
-    undo_history.push(JSON.stringify(canvas));
-    redo_history.length = 0;
-    console.log(undo_history.length);
-});
+// canvas.on("object:modified", function () {
+//     if (lockHistory) return;
+//     console.log("object:modified");
+//     undo_history.push(JSON.stringify(canvas));
+//     redo_history.length = 0;
+//     console.log(undo_history.length);
+// });
 
-function undo() {
-    if (undo_history.length > 0) {
-        lockHistory = true;
-        if (undo_history.length > 1) redo_history.push(undo_history.pop()); //最初の白紙はredoに入れない
-        const content = undo_history[undo_history.length - 1];
-        canvas.loadFromJSON(content, function () {
-            canvas.renderAll();
-            lockHistory = false;
-        });
-    }
-}
+// function undo() {
+//     if (undo_history.length > 0) {
+//         lockHistory = true;
+//         if (undo_history.length > 1) redo_history.push(undo_history.pop()); //最初の白紙はredoに入れない
+//         const content = undo_history[undo_history.length - 1];
+//         canvas.loadFromJSON(content, function () {
+//             canvas.renderAll();
+//             lockHistory = false;
+//         });
+//     }
+// }
 
-function redo() {
-    if (redo_history.length > 0) {
-        lockHistory = true;
-        const content = redo_history.pop();
-        undo_history.push(content);
-        canvas.loadFromJSON(content, function () {
-            canvas.renderAll();
-            lockHistory = false;
-        });
-    }
-}
+// function redo() {
+//     if (redo_history.length > 0) {
+//         lockHistory = true;
+//         const content = redo_history.pop();
+//         undo_history.push(content);
+//         canvas.loadFromJSON(content, function () {
+//             canvas.renderAll();
+//             lockHistory = false;
+//         });
+//     }
+// }
 
-document.getElementById("undo").addEventListener("click", undo);
-document.getElementById("redo").addEventListener("click", redo);
+// document.getElementById("undo").addEventListener("click", undo);
+// document.getElementById("redo").addEventListener("click", redo);
 
 function changeBackColor(obj, color) {
     obj.set({
@@ -345,16 +345,13 @@ document.getElementById("backColor").onchange = function () {
     backRGB = this.value;
     document.getElementById("backTransparent").checked = false;
     changeBackColor(canvas, backRGB);
-    canvas.trigger('object:modified');
 }
 
 document.getElementById('backTransparent').addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
         changeBackColor(canvas, "transparent");
-        canvas.trigger('object:modified');
     } else {
         changeBackColor(canvas, backRGB);
-        canvas.trigger('object:modified');
     }
 })
 

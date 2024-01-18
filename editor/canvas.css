@@ -395,6 +395,7 @@ button.layer {
 #fileName {
     display: none;
     border: 1px solid #ccc;
+    background-color: white;
     /* 枠線を追加 */
     padding: 20px;
     /* 内側の余白を追加 */

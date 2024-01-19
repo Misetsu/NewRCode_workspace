@@ -144,7 +144,8 @@ function submitQRForm() {
 
 function addQRCode() {
     var qrresult = document.getElementById("result_qr");
-    var imgInstance = new fabric.Image(qrresult, {
+    var cloneqr = qrresult.cloneNode(true);
+    var imgInstance = new fabric.Image(cloneqr, {
         left: 50,
         top: 50,
     });

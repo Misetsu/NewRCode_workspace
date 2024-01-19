@@ -35,7 +35,7 @@
     </div>
 
     <div class="picdiv">
-        <label>Image file format</label>
+        <label>File format: </label>
         <label><input type="radio" name="filetype" value="jpg" checked>JPG/PNG</label>
         &emsp;
         <label><input type="radio" name="filetype" value="gif">GIF</label>
@@ -55,24 +55,23 @@
                         <label>Text:</label>
                         <ul>
                             <li>・URL</li>
-                            <li>・You may enter up to 58 single-byte</li>
+                            <li>・Text up to 58 characters(including spaces)</li>
                         </ul>
-                        <label>alphanumeric characters (including spaces).</label>
                         <br>
                         <input type="text" name="gifURL" id="gifURL" size="60">
                         <br><br>
-                        <label>Color od QRCode:</label>
+                        <label>Color of QR Code:</label>
                         <br>
                         <label><input type="radio" name="gifQRColor" value="wb" checked>Monochrome</label>
                         <br>
-                        <label><input id="gifQRColor" type="radio" name="gifQRColor" value="color">Auto-detection</label>
+                        <label><input id="gifQRColor" type="radio" name="gifQRColor" value="color">User-select</label>
                         <input id="gifColorCode" type="color" name="gifColorCode" value="#000000"
                             style="display: none;">
                         <br><br>
                         <label>Transparency:</label>
                         <input name="gifQRAlpha" type="range" min="0" max="100" step="10" value="0">
                         <br><br>
-                        <p>Depending on the size of the image, it may take some time to generate.</p>
+                        <p>It may take some time to generate the QR image of large GIF files.</p>
                     </div>
                 </span>
                 <br>
@@ -93,7 +92,7 @@
             </div>
             <div id="jpg2">
                 <div id="icon2">
-                    <label>Icon(optional)</label>
+                    <label>Icon(optional): </label>
                     <label class="switch">
                         <input type="checkbox" id="iconSwitch2" onclick="handleSwitch(this)">
                         <span class="slider round"></span>
@@ -231,14 +230,13 @@
                 <label>Text:</label>
                 <ul>
                     <li>・URL</li>
-                    <li>・You may enter up to 58 single-byte</li>
+                    <li>・Text up to 58 characters(including spaces)</li>
                 </ul>
-                <label>alphanumeric characters (including spaces).</label>
                 <br>
                 <input type="text" name="jpgURL" id="jpgURL" size="60">
                 <br>
                 <br>
-                <label>Color of QRCode:</label>
+                <label>Color of QR Code:</label>
                 <br>
                 <label><input type="radio" name="jpgQRColor" value="wb" checked>Monochrome</label>
                 <br>

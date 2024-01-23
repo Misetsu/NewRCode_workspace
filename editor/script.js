@@ -364,6 +364,8 @@ function allClear() {
     ctx.fillRect(0, 0, width, height);
     canvas.clear();
     canvas.renderAll();
+    changeBackColor(canvas, "white");
+    canvas.renderAll();
 }
 
 

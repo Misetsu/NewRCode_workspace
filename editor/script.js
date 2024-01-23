@@ -360,8 +360,12 @@ function allClear() {
     var ctx = canvas.getContext('2d');
     var width = canvas.width;
     var height = canvas.height;
-    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, width, height);
+    canvas.clear();
+    canvas.renderAll();
 }
+
 
 function handleSwitch(check) {
     if (check.checked) {

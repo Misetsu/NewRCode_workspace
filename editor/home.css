@@ -55,8 +55,9 @@ button {
 #usericon {
     display: flex;
     align-items: center;
+    margin-top: 5px;
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 20px;
     cursor: pointer;
 }
 

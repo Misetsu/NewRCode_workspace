@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <title>資訊 | NewR-Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='manual.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico')}}">
+</head>
+
+<body>
+    <div class="headnav">
+        <a href="/cnt" class="icon_Back">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+                <path
+                    d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z">
+                </path>
+            </svg>
+        </a>
+        <h1>NewRCode</h1>
+        <p>
+            NewR-Code 是將 QR-Code 與圖像合成的服務。<br>與舊的 QR-Code 不同，它可以將 QR-Code 與自己選擇的圖像結合，<br>還配備了各種功能，使 QR-Code 更容易辨認、且更時尚。
+        </p>
+    </div>
+    <div class="bodynav">
+        <table>
+            <tr>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="60">
+                        <path
+                            d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z">
+                        </path>
+                    </svg>
+                </td>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="60">
+                        <path
+                            d="M4 16H20V5H4V16ZM13 18V20H17V22H7V20H11V18H2.9918C2.44405 18 2 17.5511 2 16.9925V4.00748C2 3.45107 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44892 22 4.00748V16.9925C22 17.5489 21.5447 18 21.0082 18H13Z">
+                        </path>
+                    </svg>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    加LINE機器人好友，<br>輕鬆建立圖像 QR-Code !
+                </td>
+                <td>
+                    帶有圖標和 GIF 圖像，<br>創建更獨特的圖像 QR-Code !
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#line">＞<u>LINE機器人的使用方法</u></a>
+                </td>
+                <td>
+                    <a href="#site">＞<u>網站的使用方法</u></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &emsp;
+                </td>
+                <td>
+                    <a href="#demo">＞<u>使用說明影片</u></a>
+                </td>
+            </tr>
+        </table>
+        <table id="line">
+            <tr>
+                <th colspan="3">
+                    LINE機器人的使用方法
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <ol>
+                        <li>掃 QR-Code 加好友</li>
+                        <li>按下選單中的生成按鈕</li>
+                        <li>發送網址</li>
+                        <li>傳送圖片</li>
+                        <li>產生 QR-Code !</li>
+                    </ol>
+                </td>
+                <td>
+                    <img src="{{ url_for('static', filename='lineQR.png')}}" width="300" height="300">
+                </td>
+                <td>
+                    <img src="{{ url_for('static', filename='linecapture.jpg')}}" width="300" height="604">
+                </td>
+            </tr>
+        </table>
+        <table id="site">
+            <tr>
+                <th colspan="2">
+                    網站的使用方法
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='capture1.png')}}" width="660" height="300">
+                </td>
+                <td>
+                    <ol>
+                        <li>語言</li>
+                        <li>海報製作</li>
+                        <li>產生 QR-Code</li>
+                        <li>網站介紹</li>
+                        <li>LINE機器人</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='capture2.png')}}" width="660" height="300">
+                </td>
+                <td>
+                    <ol>
+                        <li>回上一頁</li>
+                        <li>返回首頁</li>
+                        <li>下載</li>
+                        <li>縮小和放大</li>
+                        <li>全部刪除</li>
+                        <li>插入文字</li>
+                        <li>QR-Code</li>
+                        <li>插入圖片</li>
+                        <li>插入圖形</li>
+                        <li>調整大小</li>
+                        <li>管理圖層</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='capture3.png')}}" width="660" height="300">
+                </td>
+                <td>
+                    <ol>
+                        <li>選擇 JPG、PNG 或 GIF</li>
+                        <li>上傳圖像</li>
+                        <li>裁切圖片（僅限 JPG 和 PNG）</li>
+                        <li>選擇圖示（僅限 JPG 和 PNG）</li>
+                        <li>輸入網址</li>
+                        <li>選擇 QR-Code 的顏色</li>
+                        <li>選擇 QR-Code 的透明度</li>
+                        <li>按產生按鈕產生 QR-Code</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        <table id="demo">
+            <tr>
+                <th>使用說明影片</th>
+            </tr>
+            <tr>
+                <td>
+                    <video width="480" height="270" controls>
+                        <source src="{{ url_for('static', filename='demonstration.mp4')}}" type="video/mp4">
+                    </video>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

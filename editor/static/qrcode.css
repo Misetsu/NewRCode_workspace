@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: larger;
+}
+
+header {
+    background: #878787;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 20px;
+    width: 200px;
+    height: 55px;
+    background: url(logo_IMG.png) no-repeat;
+    background-size: 200px 50px;
+    text-indent: -9999px;
+}
+
+.icon_Back {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.topnav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+.bodydiv {
+    margin-top: 8%;
+    padding-bottom: 2%;
+}
+
+#usericon {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #878787;
+    border: none;
+}
+
+.shape_btn {
+    background-color: transparent;
+    border: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(23px);
+    -ms-transform: translateX(23px);
+    transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#jpgFile {
+    display: flex;
+}
+
+#jpg1 {
+    flex: 1;
+}
+
+#jpg2 {
+    flex: 1;
+}
+
+#gifFile form span {
+    display: flex;
+}
+
+#gif1 {
+    flex: 1;
+}
+
+#gif2 {
+    flex: 1;
+}
+
+.center {
+    text-align: center;
+}
+
+.picdiv {
+    margin-top: 8%;
+    margin-left: 15%;
+    padding-bottom: 2%;
+}
+
+.center_button {
+    width: 20%;
+    font-size: larger;
+    display: inline-block;
+    margin-top: 3%;
+}

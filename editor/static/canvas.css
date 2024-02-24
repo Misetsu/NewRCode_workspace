@@ -1,0 +1,656 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*ラジオボタンのサイズ*/
+body input[type="radio"] {
+    width: 20px;
+    height: 20px;
+}
+
+/*カラーボックスのサイズ*/
+#backColor {
+    vertical-align: middle;
+    width: 20%;
+    height: 35px;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+#textBorderColor {
+    vertical-align: middle;
+    width: 20%;
+    height: 35px;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+#shapeBorderColor {
+    vertical-align: middle;
+    width: 20%;
+    height: 35px;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+#shapeColor {
+    vertical-align: middle;
+    width: 20%;
+    height: 35px;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+/*プルダウンのサイズ*/
+body input[type="number"] {
+    width: 80px;
+    height: x-large;
+}
+
+/*チェックボックスのサイズ*/
+body input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+/*ファイル選択のサイズ*/
+body input[type="file"] {
+    font-size: larger;
+}
+
+/*ナンバー選択のサイズ*/
+body input[type="number"] {
+    font-size: x-large;
+    text-align: right;
+}
+
+/*input*/
+body input[type="submit"] {
+    font-size: larger;
+}
+
+body input[type="text"] {
+    font-size: large;
+    width: 310px;
+}
+
+header {
+    background: #878787;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 20px;
+    width: 200px;
+    height: 55px;
+    background: url(logo_IMG.png) no-repeat;
+    background-size: 200px 50px;
+    text-indent: -9999px;
+}
+
+.icon_Back {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.icon_L {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: transparent;
+    border: none;
+    background-color: transparent;
+    border: none;
+}
+
+.icon_R {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.icon_R2 {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.icon_Back:hover {
+    transform: scale(1.2);
+}
+
+.icon_L:hover {
+    transform: scale(1.2);
+}
+
+.icon_R:hover {
+    transform: scale(1.2);
+}
+
+.icon_R2:hover {
+    transform: scale(1.2);
+}
+
+.topnav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 75px;
+    background-color: #B4B4B4;
+    width: 80px;
+    height: 100%;
+    z-index: 998;
+}
+
+.sidebar ul button {
+    padding: 15px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    transition: 0.4s;
+    background-color: #B4B4B4;
+}
+
+.sidenav {
+    position: fixed;
+    display: none;
+    background-color: #d7d7d7;
+    padding: 10px;
+    padding-top: 85px;
+    margin-bottom: 20px;
+    left: 80px;
+    width: 350px;
+    height: 100%;
+    text-align: left;
+    z-index: 997;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/*↓↓↓*/
+/*中央揃え*/
+/*テキスト追加*/
+div.aligncenter1 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border: none;
+}
+
+/*テキストスタイル*/
+div.submenu {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border: none;
+}
+
+/*リサイズボタン1*/
+div.aligncenter2 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+/*リサイズの変更ボタン2*/
+div.aligncenter3 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border: none;
+}
+
+div.aligncenter4 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border: none;
+}
+
+/*ホーバー*/
+button#addText:hover {
+    background-color: rgb(180, 180, 180);
+}
+
+button.textDesign:hover {
+    background-color: #B4B4B4;
+}
+
+button.canvasSize1:hover {
+    background-color: #B4B4B4;
+}
+
+button.canvasSize2:hover {
+    background-color: #B4B4B4;
+}
+
+button.layer:hover {
+    background-color: #B4B4B4;
+}
+
+/*新規クラス(4つの項目なので25%)*/
+.textDesign {
+    width: 25%;
+    height: 35px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+.canvasSize1 {
+    width: 25%;
+    height: 35px;
+    font-size: large;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+.canvasSize2 {
+    width: 100%;
+    height: 35px;
+    font-size: large;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+button.textDesign:hover {
+    background-color: #B4B4B4;
+}
+
+button.canvasSize1:hover {
+    background-color: #B4B4B4;
+}
+
+button.canvasSize2:hover {
+    background-color: #B4B4B4;
+}
+
+button.layer {
+    width: 25%;
+    font-size: 20px;
+    margin: 5px auto;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+/*↑*/
+#movable {
+    width: 595px;
+    height: 842px;
+    position: absolute;
+    margin: auto;
+    display: block;
+}
+
+#canvas-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: aliceblue;
+}
+
+.shape_btn {
+    background-color: transparent;
+    border: none;
+}
+
+.textDesign {
+    padding: 5px;
+}
+
+.qrimage {
+    /* margin-top: 5px; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: left;
+}
+
+.image {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+.upload-area {
+    width: 100%;
+    height: 210px;
+    position: relative;
+    border: 1px dotted rgb(0, 0, 0);
+    background-color: #B4B4B4;
+}
+
+.upload-area p {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+}
+
+#input-files {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slidebar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+    height: 100%;
+}
+
+#fileName {
+    display: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    /* 枠線を追加 */
+    padding: 20px;
+    /* 内側の余白を追加 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 996;
+}
+
+#Height {
+    height: x-large;
+    width: 70%;
+    font-size: x-large;
+    text-align: right;
+    border: none;
+    background-color: #d7d7d7;
+    border-bottom: 3px solid #000;
+}
+
+#Width {
+    height: x-large;
+    width: 70%;
+    font-size: x-large;
+    text-align: right;
+    border: none;
+    background-color: #d7d7d7;
+    border-bottom: 3px solid #000;
+}
+
+button#swap {
+    width: 100%;
+    height: 35px;
+    font-size: x-large;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+button#swap:hover {
+    background-color: #B4B4B4;
+}
+
+
+
+/*サイドバーの変更*/
+
+/*1.テキスト*/
+#boldText {
+    font-size: larger;
+}
+
+#italicText {
+    font-size: larger;
+}
+
+#underlineText {
+    font-size: larger;
+}
+
+#slashText {
+    font-size: larger;
+}
+
+/*テキスト挿入*/
+#addText {
+    font-size: x-large;
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+.textColor {
+    text-align: center;
+    width: 20%;
+    height: 35px;
+    background-color: #d7d7d7;
+    border: none;
+}
+
+/*枠線の幅セレクトボックス*/
+#textBorderWidth {
+    font-size: larger;
+    text-align: center;
+    height: x-large;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #000;
+    background-color: #d7d7d7;
+    border-radius: 0;
+}
+
+#textBorderWidth:hover {
+    background-color: #B4B4B4;
+}
+
+/*2.RQコード生成*/
+
+/*背景画像*/
+#cvs {
+    border: 1px solid #181818;
+    /* 枠線のスタイルを指定 */
+}
+
+#result_qr {
+    border: 1px solid #181818;
+    /* 枠線のスタイルを指定 */
+}
+
+/*アイコンのプレビュー*/
+#preview2 {
+    border: 1px solid #181818;
+    /* 枠線のスタイルを指定 */
+    margin-left: x-large;
+}
+
+/*URLを入力するテキストボックス*/
+
+/*3.図形*/
+#shapeBorderWidth {
+    font-size: larger;
+    text-align: center;
+    height: x-large;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #000;
+    background-color: #d7d7d7;
+    border-radius: 0;
+}
+
+#shapeBorderWidth:hover {
+    background-color: #B4B4B4;
+}
+
+/*4.リサイズ*/
+#A3 {
+    font-size: larger;
+}
+
+#A4 {
+    font-size: larger;
+}
+
+#A5 {
+    font-size: larger;
+}
+
+#B4 {
+    font-size: larger;
+}
+
+#B5 {
+    font-size: larger;
+}
+
+#Card {
+    font-size: larger;
+}
+
+#sizeChange {
+    font-size: larger;
+    margin-right: 5px;
+    float: right;
+}
+
+.item {
+    font-size: larger;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.submenu {
+    font-size: x-large;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#table {
+    margin: 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #888;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(23px);
+    -ms-transform: translateX(23px);
+    transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+#add_result {
+    font-size: larger;
+    margin-right: 5px;
+    float: right;
+}

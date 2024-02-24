@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+* {}
+
+body {
+    background-color: #878787;
+}
+
+.selectbox-detail {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.selectbox-detail::after {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    height: 7px;
+    background-color: #fff;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+    pointer-events: none;
+}
+
+.selectbox-detail select {
+    appearance: none;
+    min-width: 100px;
+    height: 2.8em;
+    padding: .4em calc(.8em + 30px) .4em .8em;
+    border: none;
+    border-bottom: 3px solid #000000;
+    background-color: #878787;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.selectbox-detail select:focus {
+    outline: none;
+}
+
+button {
+    background-color: #878787;
+    border: none;
+}
+
+.btn {
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#usericon {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+#langchange {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+h1 {
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(Homelogo_IMG1.png) no-repeat;
+    width: 800px;
+    height: 200px;
+    text-indent: -9999px;
+    transition: 0.5s;
+}
+
+h1:hover {
+    background-image: url(Homelogo_IMG1h.png);
+}
+
+#edit {
+    text-align: center;
+}
+
+#edit button {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#edit ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+ul li button {
+    position: relative;
+}
+
+ul li button:before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 6px;
+    width: 0;
+    background: #ffd70d;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+ul li button:hover:before {
+    width: 87%;
+}
+
+
+
+.linenavi {
+    padding-left: 0px;
+    position: absolute;
+    bottom: 50px;
+    width: 400px;
+    left: -300px;
+    transition: 0.5s;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#naviimg {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    justify-content: right;
+}
+
+img.lineicon {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+img.lineQR {
+    border-radius: 5px;
+}
+
+.linenavi:hover {
+    left: -50px;
+}
+
+.linenavi:hover #arrow {
+    transform: scale(-1, 1);
+}
+
+small {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        margin-left: auto;
+        margin-right: auto;
+        background: url(Homelogo_IMG2.png) no-repeat;
+        width: 600px;
+        height: 150px;
+        margin-bottom: 72px;
+        transition: 0.5s;
+    }
+
+    h1:hover {
+        background-image: url(Homelogo_IMG2h.png);
+    }
+}

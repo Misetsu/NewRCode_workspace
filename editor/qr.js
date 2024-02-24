@@ -1,29 +1,37 @@
 const ICON = ['amazon.png', 'chrome.png', 'discord.png', 'facebook.png', 'google.png',
     'instagram.png', 'line.png', 'snapchat.png', 'tiktok.png', 'twitch.png',
     'twitter.png', 'wechat.png', 'weibo.png', 'whatsapp.png', 'youtube.png'];
-var selectColor = document.getElementsByName("qrColor");
+var selectColor1 = document.getElementsByName("gifQRColor");
+var inputFile1 = document.getElementById("gifImage");
 
-selectColor.forEach(function (selectColor) {
+selectColor1.forEach(function (selectColor) {
     selectColor.addEventListener("change", function () {
         if (selectColor.value === 'color') {
-            document.getElementById("colorCode").style.display = "inline-block";
+            document.getElementById("gifColorCode").style.display = "inline-block";
         } else {
-            document.getElementById("colorCode").style.display = "none";
-            document.getElementById("colorCode").value = "#000000";
+            document.getElementById("gifColorCode").style.display = "none";
+            document.getElementById("gifColorCode").value = "#000000";
         }
     });
 });
 
 function changehidden(num) {
     var path = "icon/" + ICON[num];
-    document.getElementById('iconImage').value = num;
-    document.getElementById('preview2').src = path;
+    document.getElementById('jpgIcon').value = num;
+    document.getElementById('icon_preview').src = path;
 }
 
-const cvs = document.getElementById('cvs')
+inputFile1.addEventListener('change', (event) => {
+    var [file] = event.target.files
+    if (file) {
+        document.getElementById("gifPreview").setAttribute('src', URL.createObjectURL(file));
+    }
+})
+
+const cvs = document.getElementById('cvs2')
 const cw = cvs.width
 const ch = cvs.height
-const out = document.getElementById('out')
+const out = document.getElementById('out2')
 const oh = out.height
 const ow = out.width
 
@@ -36,7 +44,7 @@ img.onload = function (_ev) {   // 画像が読み込まれた
     ix = img.width / 2
     iy = img.height / 2
     let scl = parseInt(cw / img.width * 100)
-    document.getElementById('scal').value = scl
+    document.getElementById('scal2').value = scl
     scaling(scl)
 }
 function load_img(_url) {  // 画像の読み込み
@@ -95,34 +103,52 @@ cvs.ontouchmove =
         return false // イベントを伝搬しない
     }
 cvs.onmousewheel = function (_ev) {    // canvas ホイールで拡大縮小
-    let scl = parseInt(parseInt(document.getElementById('scal').value) + _ev.wheelDelta * 0.05)
+    let scl = parseInt(parseInt(document.getElementById('scal2').value) + _ev.wheelDelta * 0.05)
     if (scl < 10) scl = 10
     if (scl > 400) scl = 400
-    document.getElementById('scal').value = scl
+    document.getElementById('scal2').value = scl
     scaling(scl)
     return false // イベントを伝搬しない
 }
 
+function handleSwitch(check) {
+    if (check.checked) {
+        document.getElementById("iconSelect2").style.display = "block";
+    } else {
+        document.getElementById("iconSelect2").style.display = "none";
+        document.getElementById("icon_preview").setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg");
+        document.getElementById("jpgIcon").value = "";
+    }
+}
+
+var selectColor2 = document.getElementsByName("jpgQRColor");
+
+selectColor2.forEach(function (selectColor) {
+    selectColor.addEventListener("change", function () {
+        if (selectColor.value === 'color') {
+            document.getElementById("jpgColorCode").style.display = "inline-block";
+        } else {
+            document.getElementById("jpgColorCode").style.display = "none";
+            document.getElementById("jpgColorCode").value = "#000000";
+        }
+    });
+});
+
 function submitQRForm() {
     crop_img();
-    var outcanvas = document.getElementById("out");
-    var iconCode = document.getElementById("iconImage").value;
-    for (i = 0; i < selectColor.length; i++) {
-        if (selectColor[i].checked)
-            var color = selectColor[i].value;
+    var outcanvas = document.getElementById("out2");
+    var iconCode = document.getElementById("jpgIcon").value;
+    for (i = 0; i < selectColor2.length; i++) {
+        if (selectColor2[i].checked)
+            var color = selectColor2[i].value;
     }
-    var colorCode = document.getElementById("colorCode").value;
-    var alpha = document.getElementById("alphaSlidebar").value;
-    var resultQR = document.getElementById("result_qr");
+    var colorCode = document.getElementById("jpgColorCode").value;
+    var alpha = document.getElementById("jpgQRAlpha").value;
 
     backimage = outcanvas.toDataURL("image/JPEG");
-    var now = new Date();
-    var now_str = now.format("yyyymmddHHMMssL");
-    var filename = now_str + ".jpg";
 
     var server_data = [
         { "backimageURL": backimage },
-        { "filename": filename },
         { "iconCode": iconCode },
         { "url": url },
         { "color": color },
@@ -132,23 +158,26 @@ function submitQRForm() {
 
     $.ajax({
         type: "POST",
-        url: "/qrform",
+        url: "/jpgtest",
         data: JSON.stringify(server_data),
         contentType: "application/json",
         dataType: 'json',
         success: function (result) {
-            resultQR.src = "data:image/jpg;base64," + result["image"];
+            window.location.href = result;
         }
     });
 }
 
-function addQRCode() {
-    var qrresult = document.getElementById("result_qr");
-    var cloneqr = qrresult.cloneNode(true);
-    var imgInstance = new fabric.Image(cloneqr, {
-        left: 50,
-        top: 50,
+var filetype = document.getElementsByName("filetype");
+
+filetype.forEach(function (selecttype) {
+    selecttype.addEventListener("change", function () {
+        if (selecttype.value === 'gif') {
+            document.getElementById("jpgFile").style.display = "none";
+            document.getElementById("gifFile").style.display = "block";
+        } else {
+            document.getElementById("jpgFile").style.display = "flex";
+            document.getElementById("gifFile").style.display = "none";
+        }
     });
-    imgInstance.scaleToWidth(200);
-    canvas.add(imgInstance).renderAll();
-}
+});

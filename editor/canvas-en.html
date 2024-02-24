@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -139,20 +139,20 @@
     </div>
 
     <div class="sidenav" id="contents1">
-        <h1>テキスト</h1>
+        <h1>Text</h1>
         <div class="aligncenter1">
-            <button id="addText" onclick="addText()">文字を入れる</button>
+            <button id="addText" onclick="addText()">Add text</button>
         </div>
         <div class="aligncenter2">
-            <input title="文字色" type="color" value="#000000" class="textColor" id="textColor">
-            <button title="太字" class="textDesign" onclick="boldText()"><b>B</b></button>
-            <button title="斜体" class="textDesign" onclick="italicText()"><i>I</i></button>
-            <button title="下線" class="textDesign" onclick="underlineText()"><u>U</u></button>
-            <button title="中心線" class="textDesign" id="right" onclick="slashText()"><s>S</s></button>
+            <input title="Color" type="color" value="#000000" class="textColor" id="textColor">
+            <button title="Bold" class="textDesign" onclick="boldText()"><b>B</b></button>
+            <button title="Italic" class="textDesign" onclick="italicText()"><i>I</i></button>
+            <button title="Underline" class="textDesign" onclick="underlineText()"><u>U</u></button>
+            <button title="Slash" class="textDesign" id="right" onclick="slashText()"><s>S</s></button>
         </div>
         <hr>
         <div class="item">
-            <label>枠線の太さ:</label>
+            <label>Stroke-width:</label>
             <select name="textBorderWidth" id="textBorderWidth">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -168,17 +168,17 @@
             </select>
         </div>
         <div class="item">
-            <label class="borderRight">枠線の色:</label>
+            <label class="borderRight">Stroke-color:</label>
             <input type="color" value="#000000" id="textBorderColor">
         </div>
     </div>
 
     <div class="sidenav" id="contents2">
-        <h1>QRコード生成</h1>
+        <h1>Generate QRcode</h1>
         <br>
         <div class="qrimage">
             <div class="submenu">
-                <label>背景画像</label>
+                <label>Background image</label>
             </div>
             <div class="center">
                 <input type="file" name="backImage" onchange="load_img(window.URL.createObjectURL(this.files[0]))"><br>
@@ -188,7 +188,7 @@
                 <canvas id='out' width='250' height='250' style="display: none;"></canvas>
             </div>
             <div class="submenu">
-                <label>アイコン（任意）:</label>
+                <label>Icon(optional):</label>
                 <label class="switch">
                     <input type="checkbox" id="iconSwitch" onclick="handleSwitch(this)">
                     <span class="slider round"></span>
@@ -366,47 +366,47 @@
             <input type="text" name="urlText" id="urlText" size="40">
             <br>
             <div class="submenu">
-                <label id="qrColor">QRコードの色:</label>
+                <label id="qrColor">Color of QRcode:</label>
             </div>
             <div class="item">
-                <label class="item"><input type="radio" name="qrColor" value="wb" checked>白黒</label>
+                <label class="item"><input type="radio" name="qrColor" value="wb" checked>Monochrome</label>
                 <br>
-                <label class="item"><input type="radio" name="qrColor" value="auto">自動検出</label>
+                <label class="item"><input type="radio" name="qrColor" value="auto">Auto-detection</label>
                 <br>
-                <label class="item"><input id="qrColor" type="radio" name="qrColor" value="color">自定義</label>
+                <label class="item"><input id="qrColor" type="radio" name="qrColor" value="color">User-select</label>
                 <input id="colorCode" type="color" name="colorCode" value="#000000" style="display: none;">
                 <br>
-                <label class="item">透明度:</label>
+                <label class="item">Transparency:</label>
                 <input name="qrAlpha" id="alphaSlidebar" type="range" min="0" max="100" step="10" value="0">
                 <div class="right">
-                    <input type="submit" value="生成" onclick="submitQRForm()">
+                    <input type="submit" value="Generate" onclick="submitQRForm()">
                 </div>
             </div>
         </div>
         <hr>
         <div class="submenu">
-            <label>結果:</label>
+            <label>Result:</label>
         </div>
         <div class="center">
             <img id="result_qr" width="250px" height="250px">
         </div>
         <div class="right">
-            <button id="add_result" onclick="addQRCode()">追加</button>
+            <button id="add_result" onclick="addQRCode()">Append</button>
         </div>
     </div>
 
     <div class="sidenav" id="contents3">
-        <h1>画像アップロード</h1>
+        <h1>Upload image</h1>
         <form class="image" action="" method="POST" enctype="multipart/form-data">
             <div class="upload-area">
-                <p>ドラッグ＆ドロップ<br>またはクリック</p>
+                <p>Drag & drop your image here<br>or click to browse</p>
                 <input type="file" name="upload_file" id="input-files">
             </div>
         </form>
     </div>
 
     <div class="sidenav" id="contents4">
-        <h1>図形</h1>
+        <h1>Shape</h1>
         <br>
         <div class="item">
             <div class="center">
@@ -553,11 +553,11 @@
         </div>
         <hr>
         <div class="submenu">
-            <label>枠線</label>
+            <label>Stroke</label>
         </div>
         <div class="item">
             <span>
-                <label class="item">幅：</label>
+                <label class="item">Width:</label>
                 <select name="shapeBorderWidth" id="shapeBorderWidth">
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -573,29 +573,29 @@
                 </select>
             </span>
             <span>
-                <label class="item">色：</label><input type="color" value="#000000" id="shapeBorderColor">
+                <label class="item">Color:</label><input type="color" value="#000000" id="shapeBorderColor">
             </span>
         </div>
         <hr>
         <div class="submenu">
-            <label>塗りつぶし</label>
+            <label>Fill</label>
         </div>
         <div class="item">
             <span>
-                <label>色：</label><input type="color" value="#000000" id="shapeColor"><br>
+                <label>Color:</label><input type="color" value="#000000" id="shapeColor"><br>
             </span>
         </div>
         <div class="item">
             <span>
-                <label>透明：<input type="checkbox" id="shapeTransparent"></label>
+                <label>Transparenty:<input type="checkbox" id="shapeTransparent"></label>
             </span>
         </div>
     </div>
 
     <div class="sidenav" id="contents5">
-        <h1>リサイズ</h1>
+        <h1>Resize</h1>
         <br>
-        <p><label class="submenu">縦</label>
+        <p><label class="submenu">H</label>
             <input type="number" id="Height"><label class="submenu">px</label>
         </p>
         <button id="swap" onclick="swapWH()">
@@ -605,7 +605,7 @@
                 </path>
             </svg>
         </button>
-        <p><label class="submenu">横</label>
+        <p><label class="submenu">W</label>
             <input type="number" id="Width"><label class="submenu">px</label>
         </p>
         <div class="aligncenter2">
@@ -616,54 +616,54 @@
             <button id="B5" class="canvasSize1" onclick="autoB5()">B5</button>
         </div>
         <div class="aligncenter3">
-            <button id="Card" class="canvasSize2" onclick="autoCard()">はがき</button>
+            <button id="Card" class="canvasSize2" onclick="autoCard()">Postcard</button>
             <button id="Square" class="canvasSize2" onclick="autoRatio()">1:1</button>
         </div>
         <br>
-        <button id="sizeChange" onclick="reSize()">変更</button>
+        <button id="sizeChange" onclick="reSize()">Change</button>
         <br>
         <br>
         <hr>
         <div class="submenu">
-            <label>背景</label>
+            <label>Background</label>
         </div>
         <div class="item">
             <span>
-                <label>色：</label><input type="color" value="#FFFFFF" id="backColor"><br>
+                <label>Color:</label><input type="color" value="#FFFFFF" id="backColor"><br>
             </span>
         </div>
         <div class="item">
             <span>
-                <label>透明：<input type="checkbox" id="backTransparent"></label>
+                <label>Transparenty:<input type="checkbox" id="backTransparent"></label>
             </span>
         </div>
     </div>
 
     <div class="sidenav" id="contents6">
-        <h1>レイヤー</h1>
+        <h1>Layer</h1>
         <div class="aligncenter4">
-            <button title="前面へ" class="layer" id="bringToFrontBtn">
+            <button title="Bring-forward" class="layer" id="bringToFrontBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
                     <path
                         d="M14 3C14.5523 3 15 3.44772 15 4V9H20C20.5523 9 21 9.44772 21 10V20C21 20.5523 20.5523 21 20 21H10C9.44772 21 9 20.5523 9 20V15H4C3.44772 15 3 14.5523 3 14V4C3 3.44772 3.44772 3 4 3H14ZM13 5H5V13H13V5Z">
                     </path>
                 </svg>
             </button>
-            <button title="背面へ" class="layer" id="sendToBackBtn">
+            <button title="Send-backward" class="layer" id="sendToBackBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
                     <path
                         d="M14 3C14.5523 3 15 3.44772 15 4V9H20C20.5523 9 21 9.44772 21 10V20C21 20.5523 20.5523 21 20 21H10C9.44772 21 9 20.5523 9 20V15H4C3.44772 15 3 14.5523 3 14V4C3 3.44772 3.44772 3 4 3H14ZM13 5H5V13H9V10C9 9.44772 9.44772 9 10 9H13V5Z">
                     </path>
                 </svg>
             </button>
-            <button title="最前面へ" class="layer" id="bringForwardBtn">
+            <button title="Bring-to-front" class="layer" id="bringForwardBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
                     <path
                         d="M11 3C11.5523 3 12 3.44772 12 4V6H17C17.5523 6 18 6.44772 18 7V12H20C20.5523 12 21 12.4477 21 13V20C21 20.5523 20.5523 21 20 21H13C12.4477 21 12 20.5523 12 20V18H7C6.44772 18 6 17.5523 6 17V12H4C3.44772 12 3 11.5523 3 11V4C3 3.44772 3.44772 3 4 3H11ZM16 8H8V16H16V8Z">
                     </path>
                 </svg>
             </button>
-            <button title="最背面へ" class="layer" id="sendBackwardsBtn">
+            <button title="Send-to-back" class="layer" id="sendBackwardsBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
                     <path
                         d="M11 3C11.5523 3 12 3.44772 12 4V6H17C17.5523 6 18 6.44772 18 7V12H20C20.5523 12 21 12.4477 21 13V20C21 20.5523 20.5523 21 20 21H13C12.4477 21 12 20.5523 12 20V18H7C6.44772 18 6 17.5523 6 17V12H4C3.44772 12 3 11.5523 3 11V4C3 3.44772 3.44772 3 4 3H11ZM16 8H12V11C12 11.5523 11.5523 12 11 12H8V16H12V13C12 12.4477 12.4477 12 13 12H16V8Z">
@@ -680,10 +680,10 @@
     </div>
 
     <div id="fileName">
-        <button class="downloadButton" onclick="pngdownload()" id="png">PNGをダウンロード</button><br>
-        <button class="downloadButton" onclick="jpgdownload()" id="jpg">JPGをダウンロード</button><br>
-        <button class="downloadButton" onclick="pdfdownload()" id="pdf">PDFをダウンロード</button><br>
-        <button class="downloadcancel" onclick="cancel()" id="downloadcancel">キャンセル</button>
+        <button class="downloadButton" onclick="pngdownload()" id="png">Download as PNG</button><br>
+        <button class="downloadButton" onclick="jpgdownload()" id="jpg">Download as JPG</button><br>
+        <button class="downloadButton" onclick="pdfdownload()" id="pdf">Download as PDF</button><br>
+        <button class="downloadcancel" onclick="cancel()" id="downloadcancel">Cancel</button>
     </div>
 
     <script src="script.js"></script>

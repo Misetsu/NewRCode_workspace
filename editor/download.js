@@ -6,12 +6,15 @@ function selectDownload() {
 
     if (computedStyle.getPropertyValue('display') === 'none') {
         div.style.display = 'block';
-    } 
+        canvas.discardActiveObject();
+        canvas.discardActiveGroup();
+        canvas.renderAll();
+    }
 }
 
 
-window.onclick = function(event){
-    if(event.target == downloadcancel){
+window.onclick = function (event) {
+    if (event.target == downloadcancel) {
         div.style.display = 'none';
     }
 }
@@ -47,15 +50,15 @@ document.getElementById("jpg").onclick = (event) => {
 
 //pdf形式で画像を保存
 
-    // Canvasに描画するコードはこちらに追加
+// Canvasに描画するコードはこちらに追加
 
-    function pdfdownload() {
-      const {jsPDF} = window.jspdf;
-      const pdf = new jsPDF();
-      var width = pdf.internal.pageSize.getWidth();
-      var height = pdf.internal.pageSize.getHeight();
-      const canvasDataURL = canvas.toDataURL('image/png');
+function pdfdownload() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+    var width = pdf.internal.pageSize.getWidth();
+    var height = pdf.internal.pageSize.getHeight();
+    const canvasDataURL = canvas.toDataURL('image/png');
 
-      pdf.addImage(canvasDataURL, 'PNG', 0, 0, width, height);
-      pdf.save(formattedDateTime + '.pdf');
-    }
+    pdf.addImage(canvasDataURL, 'PNG', 0, 0, width, height);
+    pdf.save(formattedDateTime + '.pdf');
+}

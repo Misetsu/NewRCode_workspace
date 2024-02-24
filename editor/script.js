@@ -1,12 +1,14 @@
-let lockHistory = false;
-const undo_history = [];
-const redo_history = [];
+// let lockHistory = false;
+// const undo_history = [];
+// const redo_history = [];
 
 var canvas = this.__canvas = new fabric.Canvas('canvas', { backgroundColor: "#fff" });
 canvas.setHeight(document.getElementById("movable").clientHeight);
 canvas.setWidth(document.getElementById("movable").clientWidth);
+document.getElementById("Height").value = "842";
+document.getElementById("Width").value = "595";
 
-undo_history.push(JSON.stringify(canvas));
+// undo_history.push(JSON.stringify(canvas));
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'blue';
 fabric.Object.prototype.cornerStyle = 'circle';
@@ -52,7 +54,7 @@ function open_close1() {
         menuState = 1;
         menu1 = 1;
         nav1.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu1 === 0) {
             menu1 = 1;
@@ -71,7 +73,7 @@ function open_close1() {
             menuState = 0;
             menu1 = 0;
             nav1.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -82,7 +84,7 @@ function open_close2() {
         menuState = 1;
         menu2 = 1;
         nav2.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu2 === 0) {
             menu1 = 0;
@@ -101,7 +103,7 @@ function open_close2() {
             menuState = 0;
             menu2 = 0;
             nav2.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -112,7 +114,7 @@ function open_close3() {
         menuState = 1;
         menu3 = 1;
         nav3.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu3 === 0) {
             menu1 = 0;
@@ -131,7 +133,7 @@ function open_close3() {
             menuState = 0;
             menu3 = 0;
             nav3.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -142,7 +144,7 @@ function open_close4() {
         menuState = 1;
         menu4 = 1;
         nav4.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu4 === 0) {
             menu1 = 0;
@@ -161,7 +163,7 @@ function open_close4() {
             menuState = 0;
             menu4 = 0;
             nav4.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -172,7 +174,7 @@ function open_close5() {
         menuState = 1;
         menu5 = 1;
         nav5.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu5 === 0) {
             menu1 = 0;
@@ -191,7 +193,7 @@ function open_close5() {
             menuState = 0;
             menu5 = 0;
             nav5.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -202,7 +204,7 @@ function open_close6() {
         menuState = 1;
         menu6 = 1;
         nav6.style.display = "block";
-        main.style.marginLeft = "330px";
+        main.style.left = "330px";
     } else {
         if (menu6 === 0) {
             menu1 = 0;
@@ -221,7 +223,7 @@ function open_close6() {
             menuState = 0;
             menu6 = 0;
             nav6.style.display = "none";
-            main.style.marginLeft = "auto";
+            main.style.left = "80px";
         }
     }
     console.log(menuState);
@@ -250,8 +252,8 @@ document.getElementById("input-files").onchange = function (e) {
         image.onload = function () {
             var img = new fabric.Image(image);
             img.set({
-                left: 100,
-                top: 60
+                left: 50,
+                top: 50
             });
             img.scaleToWidth(200);
             canvas.add(img).setActiveObject(img).renderAll();
@@ -288,48 +290,48 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-canvas.on("object:added", function () {
-    if (lockHistory) return;
-    console.log("object:added");
-    undo_history.push(JSON.stringify(canvas));
-    redo_history.length = 0;
-    console.log(undo_history.length);
-});
+// canvas.on("object:added", function () {
+//     if (lockHistory) return;
+//     console.log("object:added");
+//     undo_history.push(JSON.stringify(canvas));
+//     redo_history.length = 0;
+//     console.log(undo_history.length);
+// });
 
-canvas.on("object:modified", function () {
-    if (lockHistory) return;
-    console.log("object:modified");
-    undo_history.push(JSON.stringify(canvas));
-    redo_history.length = 0;
-    console.log(undo_history.length);
-});
+// canvas.on("object:modified", function () {
+//     if (lockHistory) return;
+//     console.log("object:modified");
+//     undo_history.push(JSON.stringify(canvas));
+//     redo_history.length = 0;
+//     console.log(undo_history.length);
+// });
 
-function undo() {
-    if (undo_history.length > 0) {
-        lockHistory = true;
-        if (undo_history.length > 1) redo_history.push(undo_history.pop()); //最初の白紙はredoに入れない
-        const content = undo_history[undo_history.length - 1];
-        canvas.loadFromJSON(content, function () {
-            canvas.renderAll();
-            lockHistory = false;
-        });
-    }
-}
+// function undo() {
+//     if (undo_history.length > 0) {
+//         lockHistory = true;
+//         if (undo_history.length > 1) redo_history.push(undo_history.pop()); //最初の白紙はredoに入れない
+//         const content = undo_history[undo_history.length - 1];
+//         canvas.loadFromJSON(content, function () {
+//             canvas.renderAll();
+//             lockHistory = false;
+//         });
+//     }
+// }
 
-function redo() {
-    if (redo_history.length > 0) {
-        lockHistory = true;
-        const content = redo_history.pop();
-        undo_history.push(content);
-        canvas.loadFromJSON(content, function () {
-            canvas.renderAll();
-            lockHistory = false;
-        });
-    }
-}
+// function redo() {
+//     if (redo_history.length > 0) {
+//         lockHistory = true;
+//         const content = redo_history.pop();
+//         undo_history.push(content);
+//         canvas.loadFromJSON(content, function () {
+//             canvas.renderAll();
+//             lockHistory = false;
+//         });
+//     }
+// }
 
-document.getElementById("undo").addEventListener("click", undo);
-document.getElementById("redo").addEventListener("click", redo);
+// document.getElementById("undo").addEventListener("click", undo);
+// document.getElementById("redo").addEventListener("click", redo);
 
 function changeBackColor(obj, color) {
     obj.set({
@@ -343,24 +345,36 @@ document.getElementById("backColor").onchange = function () {
     backRGB = this.value;
     document.getElementById("backTransparent").checked = false;
     changeBackColor(canvas, backRGB);
-    canvas.trigger('object:modified');
 }
 
 document.getElementById('backTransparent').addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
         changeBackColor(canvas, "transparent");
-        canvas.trigger('object:modified');
     } else {
         changeBackColor(canvas, backRGB);
-        canvas.trigger('object:modified');
     }
 })
 
 // キャンバス全体をクリア
-var ctx = canvas.getContext('2d');
-var width = canvas.width;
-var height = canvas.height;
-
 function allClear() {
-    ctx.clearRect(0, 0, width, height);
+    var ctx = canvas.getContext('2d');
+    var width = canvas.width;
+    var height = canvas.height;
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, width, height);
+    canvas.clear();
+    canvas.renderAll();
+    changeBackColor(canvas, "white");
+    canvas.renderAll();
+}
+
+
+function handleSwitch(check) {
+    if (check.checked) {
+        document.getElementById("iconSelect").style.display = "block";
+    } else {
+        document.getElementById("iconSelect").style.display = "none";
+        document.getElementById("preview2").setAttribute("src", "https://www.colorhexa.com/d7d7d7.png");
+        document.getElementById("iconImage").value = "";
+    }
 }

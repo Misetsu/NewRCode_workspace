@@ -1,0 +1,118 @@
+body {
+    margin: 0px;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    background: url(Homelogo_IMG2.png) no-repeat;
+    width: 600px;
+    height: 150px;
+    text-indent: -9999px;
+}
+
+.headnav {
+    background-color: #878787;
+    padding-top: 10px;
+    border-bottom: 5px solid #cccccc;
+}
+
+.headnav p {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-size: larger;
+}
+
+.headnav h3 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: snow;
+}
+
+.icon_Back {
+    padding-left: 10px;
+}
+
+.bodynav table {
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.bodynav table td {
+    width: 50%;
+    padding: 10px 10px;
+}
+
+.bodynav table td a {
+    color: #333;
+    text-decoration: none;
+}
+
+.bodynav table td a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+.bodynav table td a:active {
+    color: #333;
+    text-decoration: none;
+}
+
+#line {
+    margin: 30px auto;
+    width: 80%;
+}
+
+#line th {
+    text-align: left;
+    font-size: x-large;
+    padding-top: 30px;
+}
+
+#line tr td ol {
+    text-align: left;
+}
+
+#site {
+    margin: 30px auto;
+    width: 80%;
+}
+
+#site th {
+    text-align: left;
+    font-size: x-large;
+    padding-top: 30px;
+}
+
+#site tr td ol {
+    text-align: left;
+    padding-left: 10%;
+}
+
+#demo {
+    margin: 30px auto;
+    width: 80%;
+}
+
+#demo th {
+    text-align: left;
+    font-size: x-large;
+    padding-top: 30px;
+}
+
+img {
+    border: 2px solid #555;
+}
+
+#info tr td ol {
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#info tr td {
+    text-align: left;
+}

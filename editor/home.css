@@ -1,10 +1,9 @@
 @charset "utf-8";
 
-* {}
-
 body {
     background-color: #878787;
 }
+
 
 .selectbox-detail {
     display: inline-flex;
@@ -56,8 +55,10 @@ button {
 #usericon {
     display: flex;
     align-items: center;
+    margin-top: 5px;
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 #langchange {
@@ -98,6 +99,7 @@ h1:hover {
 
 ul li button {
     position: relative;
+    cursor: pointer;
 }
 
 ul li button:before {
@@ -114,7 +116,6 @@ ul li button:before {
 ul li button:hover:before {
     width: 87%;
 }
-
 
 
 .linenavi {

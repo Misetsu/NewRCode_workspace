@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+
+<body>
+    <a href="home.html">
+        <h1 class="header-logo">NewRCode</h1>
+    </a>
+    <h2>新規登録</h2>
+    <form name="form2" action="welcome.html">
+        <h3>お名前</h3>
+        <p>※「姓」と「名」の間に半角スペースを空けてください。</p>
+        <div class="input-detail">
+            <label class="ef">
+                <input type="text" placeholder="お名前" required="required"><br>
+            </label>
+        </div>
+        <h3>メールアドレス</h3>
+        <p>※登録したメールアドレスがユーザーIDになります。</p>
+        <div class="input-detail">
+            <label class="ef">
+                <input type="email" placeholder="ユーザーID/メールアドレス" required="required"><br>
+            </label>
+        </div>
+        <h3>パスワード</h3>
+        <p>※パスワードは半角英数字を含む8文字以上</p>
+        <div class="input-detail">
+            <label class="ef">
+                <input type="password" placeholder="パスワード" required="required"><br></label>
+        </div>
+        <h3>パスワード確認</h3>
+        <p>※もう一度同じパスワードを入力してください。</p>
+        <div class="input-detail">
+            <label class="ef">
+                <input type="password" placeholder="パスワード" required="required"><br></label>
+        </div>
+        <fieldset class="confirmcb">
+            <label>
+                <input type="checkbox" id="confirm" required="required">入力内容を確認しました。
+            </label>
+        </fieldset>
+        <button type="submit" onclick="check()">登録</button>
+    </form>
+    <script>
+        function check() {
+            check1 = document.form2.confirm.checked;
+            if (check1 == false) {
+                alert("入力内容を確認してチェックを入れてください。");
+            }
+        }
+    </script>
+    <p>アカウントをお持ちの方は<a href="login.html">こちら</a></p>
+</body>
+
+</html>
